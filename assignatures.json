@@ -1,0 +1,23 @@
+﻿[
+	{
+	"code": "2025963",
+	"name": "Matemáticas discretas I",
+	"cred": 4,
+	"hour": 4,	
+	"need":[
+		"1000003"
+		] 
+	},
+        {
+	"code": "1000003",
+	"name": "Álgebra lineal",
+	"cred": 4,
+	"hour": 5,	
+	"need":[
+		"1000004"
+		] 
+	}
+
+
+
+]
