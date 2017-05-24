@@ -26,17 +26,17 @@
           ]
 
         },{
-	   "name": "FISICA",
+	   "name": "Física",
 	   "materias": [
 	      "1000019","1000017"
 	    ]	
         },{
-	   "name": "CIENCIAS DE LA COMPUTACION",
+	   "name": "Ciencias de la Computación",
 	   "materias": [
 	      "2015174","2016696","2025963","2025964","2015970"
 	    ]	
         },{
-	   "name": "CIENCIAS ECONOMICAS Y ADMINISTRATIVAS",
+	   "name": "Ciencias Económicas y Administrativas",
 	   "materias": [
 	      "2015703","2015702"
 	    ]	
@@ -46,80 +46,35 @@
 	"name": "Disciplinar o Profesional",
 	"code": "C";
 	"agrupation":[
-	  {
-	   "name": "INTRODUCCION A LA INGENIERIA DE SISTEMAS Y COMPUTACION",
+	   {
+	   "name": "Métodos y Tecnologías de Software",
 	   "materias": [
-	      "2016698"
+	      "2016375","2016699","2016701","2016702","2025966","2016716","2015734"
 	    ]	
           }, {
-	   "name": "PROGRAMACION DE COMPUTADORES",
+	   "name": " Infraestructura Computacional, de Comunicaciones y de Información",
 	   "materias": [
-	      "2016375"
+	      "2016697","2016707","2025967","2016722","2016353","2025983","2016698","2025994","2025982","2025972"
 	    ]	
           }, {
-	   "name": "METODOS Y TECNOLOGIAS DE SOFTWARE",
-	   "materias": [
-	      "2016375","2016699","2016701","2016702","2025966","2016716"
-	    ]	
-          }, {
-	   "name": "INFRAESTRUCTURA COMPUTACIONAL, DE COMUNICACIONES Y DE INFORMACIÓN",
-	   "materias": [
-	      "2016697","2016707","2025967","2016722","2016353","2025983"
-	    ]	
-          }, {
-	   "name": "ELEMENTOS DE COMPUTADORES",
-	   "materias": [
-	      "2016698"
-	    ]	
-          }, {
-	   "name": "INFORMACION Y COMUNICACIONES",
-	   "materias": [
-	      "2025994"
-	    ]	
-          }, {
-	   "name": "SISTEMAS DE INFORMACION",
-	   "materias": [
-	      "2025982"
-	    ]	
-          }, {
-	   "name": "CRIPTOGRAFIA Y SEGURIDAD DE LA INFORMACION",
-	   "materias": [
-	      "2025972"
-	    ]	
-          }, {
-	   "name": "COMPUTACION VISUAL",
+	   "name": "Computación Visual",
 	   "materias": [
 	      "2025960"
 	    ]	
           }, {
-	   "name": "SISTEMAS INTELIGENTES",
+	   "name": "Sistemas Inteligentes",
 	   "materias": [
 	      "2025995"
 	    ]	
           }, {
-	   "name": "MODELOS, SISTEMAS, OPTIMIZACION Y SIMULACION",
+	   "name": "Modelos, Sistemas, Optimización y Simulación",
 	   "materias": [
-	      "2016703","2025969"
+	      "2016703","2025969","2025970","2025971"
 	    ]	
           }, {
-	   "name": "MODELOS Y SISTEMAS",
-	   "materias": [
-	      "2025970"
-	    ]	
-          }, {
-	   "name": "OPTIMIZACION",
-	   "materias": [
-	      "2025971"
-	    ]	
-          }, {
-	   "name": "CONTEXTO PROFESIONAL Y PROYECTOS DE INGENIERIA",
+	   "name": "Contexto Profesional y Proyectos de Ingeniería",
 	   "materias": [
 	      "2025975","2024045"
-	    ]	
-          }, {
-	   "name": "TRABAJO DE GRADO",
-	   "materias": [
-	      "2016843"
 	    ]	
           }
 	]
@@ -130,7 +85,7 @@
         {
           "name": "Profundización",         
           "materias": [        
-	    "",""  
+	      
           ]
 
         }

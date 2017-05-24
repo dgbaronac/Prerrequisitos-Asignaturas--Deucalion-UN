@@ -16,6 +16,348 @@
 	"need":[
 		"1000004"
 		] 
+	},
+	{
+	"code": "1000001",
+	"name": "Matemáticas Basicas",
+	"cred": 4,
+	"hour": 6,	
+	"need":[
+		
+		] 
+	},
+	{
+	"code": "1000004",
+	"name": "Cálculo diferencial",
+	"cred": 4,
+	"hour": 6,	
+	"need":[
+		"1000001"
+		] 
+	},
+	{
+	"code": "2025975",
+	"name": "Introducción a la Ingenieria de Sistemas de 	Computación",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		
+		] 
+	},
+	{
+	"code": "2015734",
+	"name": "Programación de Computadores",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		
+		] 
+	},
+	{
+	"code": "1000019",
+	"name": "Fundamentos de Mecánica",
+	"cred": 4,
+	"hour": 6,	
+	"need":[
+		"1000004"
+		] 
+	},
+	{
+	"code": "1000005",
+	"name": "Cálculo Integral",
+	"cred": 4,
+	"hour": 6,	
+	"need":[
+		"1000004"
+		] 
+	},
+	{
+	"code": "2016375",
+	"name": "Programación Orientada a Objetos",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2015734"
+		] 
+	},
+	{
+	"code": "1000013",
+	"name": "Probabilidad y Estadística",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"1000005"
+		] 
+	},
+	{
+	"code": "1000006",
+	"name": "Cálculo en Varias Variables",
+	"cred": 4,
+	"hour": 6,	
+	"need":[
+		"1000005","1000003"
+		] 
+	},
+	{
+	"code": "1000017",
+	"name": "Fundamentos de Electricidad y Magnetismo",
+	"cred": 4,
+	"hour": 6,	
+	"need":[
+		"1000005"
+		] 
+	},
+	{
+	"code": "2016353",
+	"name": "Bases de Datos",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2016375"
+		] 
+	},
+	{
+	"code": "2016698",
+	"name": "Elementos de Computadores",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2025975"
+		] 
+	},
+	{
+	"code": "2015703",
+	"name": "Ingeniería Económica",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"1000006"
+		] 
+	},
+	{
+	"code": "2025964",
+	"name": "Matemáticas discretas II",
+	"cred": 4,
+	"hour": 4,	
+	"need":[
+		"2025963"
+		] 
+	},
+	{
+	"code": "2025963",
+	"name": "Estructuras de datos",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2016375"
+		] 
+	},
+	{
+	"code": "2016697",
+	"name": "Arquitectura de Software",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2016698"
+		] 
+	},
+	{
+	"code": "2025970",
+	"name": "Modelos y Simulación",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2016375","1000013","1000006","2025964"
+		] 
+	},
+	{
+	"code": "2015702",
+	"name": "Gerencia y Gestión de Proyectos",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2015703"
+		] 
+	},
+	{
+	"code": "2025967",
+	"name": "Redes de Computadores",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"1000017","2016699","2016697"
+		] 
+	},
+	{
+	"code": "2016701",
+	"name": "Ingeniería de Software I",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2016699","2016353"
+		] 
+	},
+	{
+	"code": "2015174",
+	"name": "Introducción a la Teoria de de la computación",
+	"cred": 4,
+	"hour": 4,	
+	"need":[
+		"2025963","2016697"
+		] 
+	},
+	{
+	"code": "2025971",
+	"name": "Optimización",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2025970"
+		] 
+	},
+	{
+	"code": "2015970",
+	"name": "Métodos Númericos",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2025964","1000006"
+		] 
+	},
+	{
+	"code": "2025982",
+	"name": "Sistemas de Información",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2015702","2016375"
+		] 
+	},
+	{
+	"code": "2016702",
+	"name": "Ingeniería de Software II",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2016702","2025967"
+		] 
+	},
+	{
+	"code": "2016696",
+	"name": "Algorítmos",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"1000013","2025964","2016699"
+		] 
+	},
+	{
+	"code": "2016707",
+	"name": "Sistemas Operativos",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2016697"
+		] 
+	},
+	{
+	"code": "2025969",
+	"name": "Modelos Estocásticos y Simulación en Computación y Comunicaciones",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2025971"
+		] 
+	},
+	{
+	"code": "2025994",
+	"name": "Teoría de la Información y Sistemas de Comunicaciones",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2025967","2016696"
+		] 
+	},
+	{
+	"code": "2016703",
+	"name": "Pensamiento Sistémico",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2025970","2025982"
+		] 
+	},
+	{
+	"code": "2016716",
+	"name": "Arquitectura de Software",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2016702"
+		] 
+	},
+	{
+	"code": "2025966",
+	"name": "Lenguajes de Programación",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2016699","2015174"
+		] 
+	},
+	{
+	"code": "2025995",
+	"name": "Introducción a los Sistemas Inteligentes",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2016696"
+		] 
+	},
+	{
+	"code": "2016722",
+	"name": "Computación Paralela y Distribuida",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2016696","2025967","2016707"
+		] 
+	},
+	{
+	"code": "2025960",
+	"name": "Computación Visual",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2016696","2025994"
+		] 
+	},
+	{
+	"code": "2024045",
+	"name": "Taller de Proyectos Interdisciplinarios",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		
+		] 
+	},
+	{
+	"code": "2025983",
+	"name": "Arquitectura de Infraestructura y gobierno de TICs",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2025982","2016716","2016707"
+		] 
+	},
+	{
+	"code": "2025972",
+	"name": "Introducción a la Criptografía y a la Seguridad de la Información",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"1000013","2025967","2016696"
+		] 
 	}
 
 
