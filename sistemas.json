@@ -43,7 +43,7 @@
         }
       ]
     },{
-	"name": "Disciplinar y fundamentación",
+	"name": "Disciplinar o Profesional",
 	"code": "C";
 	"agrupation":[
 	  {
@@ -57,9 +57,69 @@
 	      "2016375"
 	    ]	
           }, {
-	   "name": "",
+	   "name": "METODOS Y TECNOLOGIAS DE SOFTWARE",
 	   "materias": [
-	      " "," "
+	      "2016375","2016699","2016701","2016702","2025966","2016716"
+	    ]	
+          }, {
+	   "name": "INFRAESTRUCTURA COMPUTACIONAL, DE COMUNICACIONES Y DE INFORMACIÓN",
+	   "materias": [
+	      "2016697","2016707","2025967","2016722","2016353","2025983"
+	    ]	
+          }, {
+	   "name": "ELEMENTOS DE COMPUTADORES",
+	   "materias": [
+	      "2016698"
+	    ]	
+          }, {
+	   "name": "INFORMACION Y COMUNICACIONES",
+	   "materias": [
+	      "2025994"
+	    ]	
+          }, {
+	   "name": "SISTEMAS DE INFORMACION",
+	   "materias": [
+	      "2025982"
+	    ]	
+          }, {
+	   "name": "CRIPTOGRAFIA Y SEGURIDAD DE LA INFORMACION",
+	   "materias": [
+	      "2025972"
+	    ]	
+          }, {
+	   "name": "COMPUTACION VISUAL",
+	   "materias": [
+	      "2025960"
+	    ]	
+          }, {
+	   "name": "SISTEMAS INTELIGENTES",
+	   "materias": [
+	      "2025995"
+	    ]	
+          }, {
+	   "name": "MODELOS, SISTEMAS, OPTIMIZACION Y SIMULACION",
+	   "materias": [
+	      "2016703","2025969"
+	    ]	
+          }, {
+	   "name": "MODELOS Y SISTEMAS",
+	   "materias": [
+	      "2025970"
+	    ]	
+          }, {
+	   "name": "OPTIMIZACION",
+	   "materias": [
+	      "2025971"
+	    ]	
+          }, {
+	   "name": "CONTEXTO PROFESIONAL Y PROYECTOS DE INGENIERIA",
+	   "materias": [
+	      "2025975","2024045"
+	    ]	
+          }, {
+	   "name": "TRABAJO DE GRADO",
+	   "materias": [
+	      "2016843"
 	    ]	
           }
 	]
