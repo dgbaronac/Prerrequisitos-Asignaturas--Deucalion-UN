@@ -15,31 +15,46 @@
         {
           "name": "Matemáticas",         
           "materias": [        
-	    "1000004","1000006","1000003"  
+	    "1000004","1000006","1000003","1000005"  
           ]
 
         },{
 
           "name": "Probabilidad y estadística",          
           "materias": [
-            "1000019"
+            "1000013"
           ]
 
         },{
-	   "name": "",
+	   "name": "FISICA",
 	   "materias": [
-	      " "," "
+	      "1000019","1000017"
 	    ]	
-          }
+        },{
+	   "name": "CIENCIAS DE LA COMPUTACION",
+	   "materias": [
+	      "2015174","2016696","2025963","2025964","2015970"
+	    ]	
+        },{
+	   "name": "CIENCIAS ECONOMICAS Y ADMINISTRATIVAS",
+	   "materias": [
+	      "2015703","2015702"
+	    ]	
+        }
       ]
     },{
 	"name": "Disciplinar y fundamentación",
 	"code": "C";
 	"agrupation":[
 	  {
-	   "name": "",
+	   "name": "INTRODUCCION A LA INGENIERIA DE SISTEMAS Y COMPUTACION",
 	   "materias": [
-	      " "," "
+	      "2016698"
+	    ]	
+          }, {
+	   "name": "PROGRAMACION DE COMPUTADORES",
+	   "materias": [
+	      "2016375"
 	    ]	
           }, {
 	   "name": "",
