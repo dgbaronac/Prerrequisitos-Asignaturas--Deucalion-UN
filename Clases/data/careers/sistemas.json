@@ -10,52 +10,40 @@
   "components": [
     {
       "name": "Fundamentación",
-      "code": "B";
+      "code": "B",
       "agrupation": [
         {
           "name": "Matemáticas",         
           "materias": [        
-	    "1000004","1000006","1000003"  
+	    "1000003","1000004","1000005","1000006"  
           ]
 
         },{
-
-          "name": "Probabilidad y estadística",          
-          "materias": [
-            "1000019"
-          ]
-
-        },{
-	   "name": "",
-	   "materias": [
-	      " "," "
+	   "name": "Ciencias de la computación",
+	   "materias": [	
+	    "2025963","2025964"     
 	    ]	
-          }
+         },{
+	   "name": "Ciencias económicas y administrativas",
+	   "materias": [	
+	    "2015703","2015702"     
+	    ]
+	}	
       ]
     },{
 	"name": "Disciplinar y fundamentación",
-	"code": "C";
-	"agrupation":[
-	  {
-	   "name": "",
-	   "materias": [
-	      " "," "
-	    ]	
-          }, {
-	   "name": "",
-	   "materias": [
-	      " "," "
-	    ]	
-          }
+	"code": "C",
+	"agrupation":[	  
 	]
+
       },{
       "name": "Libre Elección",
-      "code": "L";
+      "code": "L",
       "agrupation": [
         {
           "name": "Profundización",         
-          "materias": [        
-	    "",""  
+          "materias": [ 
+	
           ]
 
         }

@@ -1,4 +1,61 @@
 ﻿[
+   	{
+	"code": "1000004",
+	"name": "Cálculo diferencial",
+	"cred": 4,
+	"hour": 6,	
+	"need":[		
+		] 
+	}
+	,{
+	"code": "1000003",
+	"name": "Álgebra lineal",
+	"cred": 4,
+	"hour": 5,	
+	"need":[
+		"1000004"
+		] 
+	}
+	,
+	
+	{
+	"code": "1000005",
+	"name": "Cálculo integral",
+	"cred": 4,
+	"hour": 5,	
+	"need":[
+		"1000004"		
+		] 
+	}
+	,
+	{
+	"code": "1000006",
+	"name": "Cálculo en varias variables",
+	"cred": 4,
+	"hour": 5,	
+	"need":[
+		"1000003","1000005"
+		] 
+	}
+	,
+	{
+	"code": "2015703",
+	"name": "Ingeniería económica",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"1000006"
+		] 
+	},
+	{
+	"code": "2015702",
+	"name": "Gerencia y gestión de proyectos",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2015703"
+		] 
+	},
 	{
 	"code": "2025963",
 	"name": "Matemáticas discretas I",
@@ -8,16 +65,16 @@
 		"1000003"
 		] 
 	},
-        {
-	"code": "1000003",
-	"name": "Álgebra lineal",
+	{
+	"code": "2025964",
+	"name": "Matemáticas discretas II",
 	"cred": 4,
-	"hour": 5,	
+	"hour": 4,	
 	"need":[
-		"1000004"
+		"2025963"
 		] 
 	}
-
+     
 
 
 ]
