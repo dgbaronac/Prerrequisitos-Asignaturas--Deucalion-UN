@@ -1,7 +1,8 @@
-
-
-
 import java.util.Map;
+import controlP5.*;
+
+ControlP5 cp5;
+
 Assignature test;
 Career testing;
 
@@ -12,18 +13,27 @@ JSONArray assignaturesjson; //Datos de materias.
 JSONArray careersjson; //Datos de Carreras.
 StringList careerKeys; //Nombres de archivos.
 
+//Color para los botones cuando estan activos, inactivos o seleccionados
+color colorInactive;
+color colorActive;
+color colorSelected;
 
-
+PFont menuFont;//Fuente para el menu
 PFont f;
 void setup() {
 
   fullScreen();
-
-
-
+  
+  cp5 = new ControlP5(this); 
+  
+  //inicializacion color botones
+  colorInactive= color(150,150,150);
+  colorActive= color(50,50,100);
+  colorSelected= color(100,100,200);
 
   f = createFont("Calibri", 16, true);
-
+  menuFont = createFont("arial",14);
+  
   assignatures = new HashMap<String, Assignature>();
   careers = new HashMap<String, Career>();  
   
@@ -40,15 +50,44 @@ void setup() {
   
   printArray(careerKeys.array());
   
+  //Menu Lista desplegable del plan de estudios
+  String[] Listitems = {"Ingenieria de sistemas","Ingenieria mecatronica","Matematicas"};    
+  cp5.addDropdownList("Plan de estudios") 
+     .setOpen(false) 
+     .setPosition(5,5)                                   
+     .setWidth(210)//Largo lista desplegable
+     .setHeight(200)//Tamaño lista desplegable                  
+     .setBarHeight(40)//alto barra principal
+     .setItemHeight(25)//alto barra items
+     .addItems(Listitems)                  
+     .setColorBackground(colorInactive)                  
+     .setColorForeground(colorSelected)
+     .setColorActive(colorActive)
+     .setColorLabel(0) 
+     .setColorValue(color(50,50,50))
+     .setFont(createFont("arial",14))
+     ;    
   
-
+  cp5.addBang("Materias")//añade un boton para visualizar la lista de materias
+     .setPosition(220,5)
+     .setSize(80,40)
+     .setColorForeground(colorInactive)
+     .setColorActive(colorSelected)
+     .setColorCaptionLabel(0) 
+     .setFont(createFont("arial",14))         
+     .getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER)
+     ;  
   
+  cp5.addBang("Malla")//añade un boton para visualizar la malla curricular
+     .setPosition(305,5)
+     .setSize(80,40)
+     .setColorForeground(colorInactive)
+     .setColorActive(colorSelected)
+     .setColorCaptionLabel(0) 
+     .setFont(createFont("arial",14))         
+     .getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER)
+     ;   
   
-  
-  
-  
-  
-
   println(careers.size());
   println(assignatures.size());
 
@@ -83,12 +122,8 @@ void setup() {
     if( 190*x> width -190){
       x = 0;
       y++;
+    }
   }
-    
-  
-  
-  }
-
 }
 
 
