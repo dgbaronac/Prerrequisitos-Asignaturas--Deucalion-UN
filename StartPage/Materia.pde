@@ -3,18 +3,10 @@ class Assignature {
   String code;
   int cred;
   int hour; 
-  
   StringList prerequisites;
-
   String agr;
   color agrColor;
   String comp;
-
-
-
-
-
-
   Boolean aproved;  
   Integer timesStudied;
   

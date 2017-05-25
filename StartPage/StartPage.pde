@@ -13,10 +13,11 @@ JSONArray assignaturesjson; //Datos de materias.
 JSONArray careersjson; //Datos de Carreras.
 StringList careerKeys; //Nombres de archivos.
 
-//Color para los botones cuando estan activos, inactivos o seleccionados
+//Color para los botones cuando estan activos, inactivos o seleccionados y la barra de menu
 color colorInactive;
 color colorActive;
 color colorSelected;
+color barMenu;
 
 PFont menuFont;//Fuente para el menu
 PFont f;
@@ -26,10 +27,11 @@ void setup() {
   
   cp5 = new ControlP5(this); 
   
-  //inicializacion color botones
+  //inicializacion color botones y barra de menu
   colorInactive= color(150,150,150);
   colorActive= color(50,50,100);
   colorSelected= color(100,100,200);
+  barMenu=color(160,160,160);
 
   f = createFont("Calibri", 16, true);
   menuFont = createFont("arial",14);
@@ -50,16 +52,15 @@ void setup() {
   
   printArray(careerKeys.array());
   
-  //Menu Lista desplegable del plan de estudios
-  String[] Listitems = {"Ingenieria de sistemas","Ingenieria mecatronica","Matematicas"};    
+  //Menu Lista desplegable del plan de estudios  
   cp5.addDropdownList("Plan de estudios") 
      .setOpen(false) 
      .setPosition(5,5)                                   
-     .setWidth(210)//Largo lista desplegable
+     .setWidth(320)//Largo lista desplegable
      .setHeight(200)//Tamaño lista desplegable                  
      .setBarHeight(40)//alto barra principal
      .setItemHeight(25)//alto barra items
-     .addItems(Listitems)                  
+     .addItems(tempList.array()) //AQUI VA LA LISTA CON EL NOMBRE DE LAS CARRERAS                 
      .setColorBackground(colorInactive)                  
      .setColorForeground(colorSelected)
      .setColorActive(colorActive)
@@ -69,7 +70,7 @@ void setup() {
      ;    
   
   cp5.addBang("Materias")//añade un boton para visualizar la lista de materias
-     .setPosition(220,5)
+     .setPosition(330,5)
      .setSize(80,40)
      .setColorForeground(colorInactive)
      .setColorActive(colorSelected)
@@ -79,7 +80,7 @@ void setup() {
      ;  
   
   cp5.addBang("Malla")//añade un boton para visualizar la malla curricular
-     .setPosition(305,5)
+     .setPosition(415,5)
      .setSize(80,40)
      .setColorForeground(colorInactive)
      .setColorActive(colorSelected)
@@ -111,12 +112,16 @@ void setup() {
   println("Componentes: ");
   printArray( testing.getComp());
   background(50);
-  testing.getAssignature("2025970").display(mouseX, mouseY);
-  int x = 0;
-  int y = 0;
+  
+ // testing.getAssignature("2025970").display(mouseX, mouseY);
+  
   String[] sa = {"1000013", "1000004"};
   testing.preline("2025966");
   testing.getAssignaturesLIST().sort();
+  
+//esta funcion a sido implementada en displayMalla()  
+////////////////////////////////////////////  
+ /* 
   for(String s: testing.getAssignatures()){ 
     testing.getAssignature(s).display(190*x++,180*y);
     if( 190*x> width -190){
@@ -124,6 +129,8 @@ void setup() {
       y++;
     }
   }
+  */
+  /////////////////////////////////////////
 }
 
 
@@ -182,8 +189,36 @@ void loadData() {
 
 
 void draw() {
-  //background(0);
-
-
-  //test.display(mouseX,mouseY);
+  background(100);
+  fill(barMenu);
+  rect(0,0,width,50);//Barra del menu  
+  
+  displayMalla();//Corregir para que las materias se empiezen a dibujar en y=50
+                 //Se puede observar como se superponen con la barra de menu
 }
+
+/*void controlEvent(ControlEvent theEvent){//Para controlar lo que hacen los botones del menu
+   if(theEvent.isController()) {
+     
+      print("control event from : "+theEvent.controller().name());
+      println(", value : "+theEvent.controller().value());
+    
+      if(theEvent.controller().name()=="Malla") {
+           displayMalla();
+      }
+   }
+}*/
+
+void displayMalla(){//Funcion que dibuja una malla
+  //Valores para recorrer el for que dibuja las materias
+  int x = 0;
+  int y = 0;
+  for(String s: testing.getAssignatures()){ 
+    testing.getAssignature(s).display(190*x++,180*y);
+    if( 190*x> width -190){
+      x = 0;
+      y++;
+    }
+  }
+}
+   
