@@ -16,9 +16,8 @@ StringList careerKeys; //Nombres de archivos.
 
 PFont f;
 void setup() {
-
-  fullScreen();
-
+//size(400,400);
+fullScreen();
 
 
 
@@ -72,11 +71,14 @@ void setup() {
   println("Componentes: ");
   printArray( testing.getComp());
   background(50);
-  testing.getAssignature("2025970").display(mouseX, mouseY);
+  testing.getAssignature("2025969").display(mouseX, mouseY);
   int x = 0;
   int y = 0;
-  String[] sa = {"1000013", "1000004"};
-  testing.preline("2025966");
+  String[] sa = {"1000003", "2025975","2015734"};
+  println(testing.getAssignature("2025969").requirementsArray());
+  int stra = testing.preline(sa);
+  println("HEEEEEEEEEEEEEERE " + stra); 
+  testing.posLine("2016696");
   testing.getAssignaturesLIST().sort();
   for(String s: testing.getAssignatures()){ 
     testing.getAssignature(s).display(190*x++,180*y);
@@ -149,6 +151,5 @@ void loadData() {
 void draw() {
   //background(0);
 
-
-  //test.display(mouseX,mouseY);
+ 
 }

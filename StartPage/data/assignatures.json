@@ -150,15 +150,7 @@
 		"2025963"
 		] 
 	},
-	{
-	"code": "2025963",
-	"name": "Matemáticas Discretas I",
-	"cred": 3,
-	"hour": 4,	
-	"need":[
-		"2016375"
-		] 
-	},
+	
 	{
 	"code": "2016697",
 	"name": "Arquitectura de Computadores",

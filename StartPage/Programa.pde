@@ -2,7 +2,7 @@ class Career {
 
   String code;
   String name;
-  
+
   int cred;
   int credFUND;
   int credDISC;
@@ -14,7 +14,7 @@ class Career {
   StringList assignatureList;
   StringList colors;
   JSONArray hierarchy;
-  
+
   HashMap<String, Assignature> localAssignatures;
 
 
@@ -40,8 +40,8 @@ class Career {
     createHierarchy(plan.getJSONArray("components"));
   }
 
-  HashMap<String,Assignature> localAssignatures(){
-    
+  HashMap<String, Assignature> localAssignatures() {
+
     return localAssignatures;
   }
 
@@ -62,12 +62,12 @@ class Career {
 
     return plan;
   }
-  
-  void askColors(String[] s){
-     colors.append(s);
+
+  void askColors(String[] s) {
+    colors.append(s);
   }
 
-  
+
   void declarateLists() {
     agrList = new StringList();
     compList = new StringList();    
@@ -127,11 +127,11 @@ class Career {
     String[] lista = assignatureList.array();
     return lista;
   }
-   StringList getAssignaturesLIST() {
+  StringList getAssignaturesLIST() {
     StringList lista = assignatureList;
     return lista;
   }
-  
+
   //Lista de nombres de agrupaciones
   String[] getAgrupations() {
     String[] lista = agrList.array();
@@ -142,13 +142,11 @@ class Career {
     String[] lista = compList.array();
     return lista;
   }
-  Assignature getAssignature(String cod){
-    
-    
-    if(localAssignatures.containsKey(cod))return localAssignatures.get(cod);
+  Assignature getAssignature(String cod) {
+
+
+    if (localAssignatures.containsKey(cod))return localAssignatures.get(cod);
     else return new Assignature();
-  
-  
   }
   void createHierarchy(JSONArray components) {
     hierarchy = components;
@@ -161,7 +159,7 @@ class Career {
         String agrName = agrupations.getJSONObject(o).getString("name");
         agrList.append(agrName);
         String[] assignatures = agrupations.getJSONObject(o).getJSONArray("materias").getStringArray();
-      
+
         for ( int u = 0; u<assignatures.length; u++) {
           Assignature temp = new Assignature();
           temp.askComp(compCode);
@@ -173,134 +171,119 @@ class Career {
       }
     }
   }
-  
-  
-  int credAgr(String s){
+
+
+  int credAgr(String s) {
     int a = 0;
-    for(Map.Entry<String,Assignature> m : localAssignatures.entrySet()){
-      if(m.getValue().getAgr().equals(s)) a += m.getValue().getCredits();
-      
+    for (Map.Entry<String, Assignature> m : localAssignatures.entrySet()) {
+      if (m.getValue().getAgr().equals(s)) a += m.getValue().getCredits();
     }
     return a;
   }
-  
-  
-  
-  void preline(String s){
-    
+
+
+
+  int preline(String s) {
+    int x = 0;
+    println();
     println("start");
     println(s);
     Assignature m = localAssignatures.get(s);
-    println(m.getName());
+    
     String[] materias = m.requirementsArray().array();
-    println();
+    if (materias.length != 0) x++;
+    println("Prerrequisitos");
     printArray(materias);
-    if( materias.length == 0 ) return; //return 0;
-    
-    StringList temp = new StringList();
-  
-    for(int i =  0; i< materias.length ;i++){
-     if(localAssignatures.get(materias[i]).hasRequirements()) temp.append(localAssignatures.get(materias[i]).requirementsArray());    
-    }
-       temp = new StringList(temp.getUnique());    
-      println();
-    printArray(temp.array());
-    
- 
-    
- 
-    
-    println("skip");
-    preline(temp.array());
-    
-    
-    
-  
-    
+    if ( materias.length == 0 ) return 0; //return 0;
 
-  }
-  
-  
-  
-  void preline(String[] s){
-    println("new");
-    Assignature[] all = new Assignature[s.length];
-    
-    StringList materias = new StringList();
-    
-    for(int i = 0; i< all.length;i++){
-    all[i] = localAssignatures.get(s[i]);
-    materias.append(all[i].requirementsArray());
-    
-    }
-    
-    printArray(materias.array());
-   
-    
-    //m.requirementsArray().array();
-    
-    
-    
-    if( materias.size() == 0 ) return; //return 0;
-    
     StringList temp = new StringList();
-    
-    for(int i =  0; i< materias.size() ;i++){
-     if(localAssignatures.get(materias.get(i)).hasRequirements()) temp.append(localAssignatures.get(materias.get(i)).requirementsArray());    
+
+    for (int i =  0; i< materias.length; i++) {
+      if (localAssignatures.get(materias[i]).hasRequirements()) temp.append(localAssignatures.get(materias[i]).requirementsArray());
     }
+    temp = new StringList(temp.getUnique());    
+    println("prerrequisitos de esos prerrequisitos");
+    printArray(temp.array());
+
+
+   
+
+
+    println("skip");
+    return x + preline(temp.array());
+  }
+
+
+
+  int preline(String[] s) {
+    println("new");
+    print(s);
+    println();
+    int x= 0;
+
+    Assignature[] all = new Assignature[s.length];
+    if (all.length == 0)return 0; else x++;
     
+    StringList pre = new StringList();
+
+    for (int i = 0; i< all.length; i++) {
+      all[i] = localAssignatures.get(s[i]);
+      println(all[i].getName());
+      pre.append(all[i].requirementsArray().array());
+      println(all[i].requirementsArray());
+    }
+    println("materias");
+
+
+    //m.requirementsArray().array();
+
+
+
+    if ( pre.size() != 0 ) x++; //return 0;
+
+    StringList temp = new StringList();
+
+    for (int i =  0; i< pre.size(); i++) {
+      if (localAssignatures.get(pre.get(i)).hasRequirements()) temp.append(localAssignatures.get(pre.get(i)).requirementsArray());
+    }
+
     temp = new StringList(temp.getUnique());
     println();
     printArray(temp.array());
-    
-    
 
 
-    
-     preline(temp.array());
-    
-    
-    
-  
-    
 
+
+
+    return x + preline(temp.array());
   }
-  
-  int pre(){
-    
-  
-  return 2;
-}
-  
 
-  
-  
-  void posLine(Assignature m){
-  
-  
-  
+
+
+
+
+  void posLine(String s) {
+    
+    Assignature m = localAssignatures.get(s);
+    StringList pos = new StringList();
+    for(Map.Entry<String,Assignature> map : localAssignatures.entrySet()){
+    if (m.needsMe(map.getValue())) pos.append( map.getValue().getCode());
+    
+    }
+    print(pos);
   }
-  
-  
-  
-  
-  HashMap<String,Assignature> subLocal(String[] s){
-    HashMap<String,Assignature> m = new HashMap<String,Assignature>();
-    for(int i = 0; i<s.length; i++){
+
+
+
+
+  HashMap<String, Assignature> subLocal(String[] s) {
+    HashMap<String, Assignature> m = new HashMap<String, Assignature>();
+    for (int i = 0; i<s.length; i++) {
       m.put(localAssignatures.get(s[i]).getCode(), localAssignatures.get(s[i]));
     }
     return m;
   }
-  
-  void display(){
 
-  
-  
-  
-  
-  
-  
-  
-  
+  void display() {
   }
 }
