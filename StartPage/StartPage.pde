@@ -13,12 +13,12 @@ JSONArray careersjson; //Datos de Carreras.
 StringList careerKeys; //Nombres de archivos.
 
 
+
 PFont f;
 void setup() {
 
-  size(800, 800);
+  fullScreen();
 
-  test = new Assignature();
 
 
 
@@ -26,8 +26,28 @@ void setup() {
 
   assignatures = new HashMap<String, Assignature>();
   careers = new HashMap<String, Career>();  
+  
   loadData();
+  
+  StringList tempList = new StringList();
+  for(Map.Entry<String,Career> m: careers.entrySet()){
+   tempList.append(m.getValue().getName());
+  }
+  printArray(tempList.array());
+  
+  
   testing = careers.get("2879");
+  
+  printArray(careerKeys.array());
+  
+  
+
+  
+  
+  
+  
+  
+  
 
   println(careers.size());
   println(assignatures.size());
@@ -51,9 +71,24 @@ void setup() {
   println(" n° de componentes "+ testing.getComp().length);
   println("Componentes: ");
   printArray( testing.getComp());
-  println("PROBANDO " + testing.preLine(testing.getAssignature("1000005")));
-  testing.getAssignature("2015703").display(mouseX, mouseY);
-  println("CREDITOS DE LA AGRUPACIÓN " + testing.getAssignature("202563").getAgr()+ ": " + testing.credAgr(testing.getAssignature("2025963").getAgr()));
+  background(50);
+  testing.getAssignature("2025970").display(mouseX, mouseY);
+  int x = 0;
+  int y = 0;
+  String[] sa = {"1000013", "1000004"};
+  testing.preline("2025966");
+  testing.getAssignaturesLIST().sort();
+  for(String s: testing.getAssignatures()){ 
+    testing.getAssignature(s).display(190*x++,180*y);
+    if( 190*x> width -190){
+      x = 0;
+      y++;
+  }
+    
+  
+  
+  }
+
 }
 
 

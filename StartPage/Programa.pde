@@ -2,6 +2,7 @@ class Career {
 
   String code;
   String name;
+  
   int cred;
   int credFUND;
   int credDISC;
@@ -13,6 +14,7 @@ class Career {
   StringList assignatureList;
   StringList colors;
   JSONArray hierarchy;
+  
   HashMap<String, Assignature> localAssignatures;
 
 
@@ -125,6 +127,11 @@ class Career {
     String[] lista = assignatureList.array();
     return lista;
   }
+   StringList getAssignaturesLIST() {
+    StringList lista = assignatureList;
+    return lista;
+  }
+  
   //Lista de nombres de agrupaciones
   String[] getAgrupations() {
     String[] lista = agrList.array();
@@ -177,33 +184,112 @@ class Career {
     return a;
   }
   
-  int preLine(Assignature m){
-    StringList pre = m.requirementsArray();
-    int am = 0;
-    Boolean noMore = false;
+  
+  
+  void preline(String s){
+    
+    println("start");
+    println(s);
+    Assignature m = localAssignatures.get(s);
+    println(m.getName());
+    String[] materias = m.requirementsArray().array();
+    println();
+    printArray(materias);
+    if( materias.length == 0 ) return; //return 0;
+    
     StringList temp = new StringList();
-    while(!noMore){
-    for(int i = 0;i< pre.size(); i++){
-      if(localAssignatures.get(pre.get(i)).hasRequirements())
-      if(localAssignatures.containsKey(pre.get(i)) == true) temp.append(localAssignatures.get(pre.get(i)).requirementsArray());
-      
-      
-      }
-      
-      if(temp.size() == 0) break;  
-      pre = temp;
-      temp.clear();
-      am =+1;
-      
+  
+    for(int i =  0; i< materias.length ;i++){
+     if(localAssignatures.get(materias[i]).hasRequirements()) temp.append(localAssignatures.get(materias[i]).requirementsArray());    
     }
-    return am;
+       temp = new StringList(temp.getUnique());    
+      println();
+    printArray(temp.array());
+    
+ 
+    
+ 
+    
+    println("skip");
+    preline(temp.array());
+    
+    
+    
+  
+    
+
   }
+  
+  
+  
+  void preline(String[] s){
+    println("new");
+    Assignature[] all = new Assignature[s.length];
+    
+    StringList materias = new StringList();
+    
+    for(int i = 0; i< all.length;i++){
+    all[i] = localAssignatures.get(s[i]);
+    materias.append(all[i].requirementsArray());
+    
+    }
+    
+    printArray(materias.array());
+   
+    
+    //m.requirementsArray().array();
+    
+    
+    
+    if( materias.size() == 0 ) return; //return 0;
+    
+    StringList temp = new StringList();
+    
+    for(int i =  0; i< materias.size() ;i++){
+     if(localAssignatures.get(materias.get(i)).hasRequirements()) temp.append(localAssignatures.get(materias.get(i)).requirementsArray());    
+    }
+    
+    temp = new StringList(temp.getUnique());
+    println();
+    printArray(temp.array());
+    
+    
+
+
+    
+     preline(temp.array());
+    
+    
+    
+  
+    
+
+  }
+  
+  int pre(){
+    
+  
+  return 2;
+}
+  
+
   
   
   void posLine(Assignature m){
   
   
   
+  }
+  
+  
+  
+  
+  HashMap<String,Assignature> subLocal(String[] s){
+    HashMap<String,Assignature> m = new HashMap<String,Assignature>();
+    for(int i = 0; i<s.length; i++){
+      m.put(localAssignatures.get(s[i]).getCode(), localAssignatures.get(s[i]));
+    }
+    return m;
   }
   
   void display(){

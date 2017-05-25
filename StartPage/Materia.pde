@@ -3,6 +3,7 @@ class Assignature {
   String code;
   int cred;
   int hour; 
+  
   StringList prerequisites;
 
   String agr;
@@ -14,8 +15,10 @@ class Assignature {
 
 
 
-  Boolean aproved;
+  Boolean aproved;  
   Integer timesStudied;
+  
+  
   //Dado por el programa
 
   Assignature() {
@@ -167,7 +170,9 @@ class Assignature {
   }
 
   StringList requirementsArray() {
-    return prerequisites;
+    StringList s = new StringList();
+    s.append(prerequisites);
+    return s;
   }
 
   void deleteRequirement(String code) {
@@ -191,7 +196,7 @@ class Assignature {
   void display(int x, int y) {
 
 
-    float size = 400;
+    float size = 170;
     float sizeb = size*5/6;
     // Depende del tamaño
     textAlign(CENTER, CENTER);
