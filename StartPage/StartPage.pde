@@ -190,11 +190,10 @@ void loadData() {
 
 void draw() {
   background(100);
-  fill(barMenu);
-  rect(0,0,width,50);//Barra del menu  
-  
   displayMalla();//Corregir para que las materias se empiezen a dibujar en y=50
                  //Se puede observar como se superponen con la barra de menu
+  fill(barMenu);
+  rect(0,0,width,50);//Barra del menu                 
 }
 
 /*void controlEvent(ControlEvent theEvent){//Para controlar lo que hacen los botones del menu
@@ -203,7 +202,7 @@ void draw() {
       print("control event from : "+theEvent.controller().name());
       println(", value : "+theEvent.controller().value());
     
-      if(theEvent.controller().name()=="Malla") {
+      if(theEvent.controller().name()=="Malla") {//para el boton Malla
            displayMalla();
       }
    }
