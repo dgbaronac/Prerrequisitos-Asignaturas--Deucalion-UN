@@ -1,0 +1,236 @@
+[
+	{
+	"code": "1000001",
+	"name": "Matemáticas Básicas",
+	"cred": 4,
+	"hour": 6,	
+	"need":[
+		""
+		] 
+	},
+	{
+	"code": "2015168",
+	"name": "Fundamentos de Matemáticas",
+	"cred": 4,
+	"hour": 4,	
+	"need":[
+		"1000001"
+		] 
+	},
+        {
+	"code": "2016377",
+	"name": "Calculo Diferencial en una Variable",
+	"cred": 4,
+	"hour": 5,	
+	"need":[
+		"1000001"
+		] 
+	},{
+	"code": "2015556",
+	"name": "Calculo Integral en una Variable",
+	"cred": 4,
+	"hour": 5,	
+	"need":[
+		"2016377"
+		] 
+	},
+	{
+	"code": "2015172",
+	"name": "Geometría Elemental",
+	"cred": 4,
+	"hour": 4,	
+	"need":[
+		""
+		] 
+	},
+	{
+	"code": "2015555",
+	"name": "Álgebra Lineal Básica",
+	"cred": 4,
+	"hour": 4,	
+	"need":[
+		"1000001"
+		] 
+	},
+	{
+	"code": "2015181",
+	"name": "Sistemas Numéricos",
+	"cred": 4,
+	"hour": 4,	
+	"need":[
+		"2015168"
+		] 
+	},
+	{
+	"code": "2015180",
+	"name": "Programación y Métodos Numéricos",
+	"cred": 4,
+	"hour": 4,	
+	"need":[
+		""
+		] 
+	},
+	{
+	"code": "2025819",
+	"name": "Introducción a la Teoría de Conjuntos",
+	"cred": 4,
+	"hour": 4,	
+	"need":[
+		"2015168"
+		] 
+	},
+	{
+	"code": "2015162",
+	"name": "Cálculo Vectorial",
+	"cred": 4,
+	"hour": 4,	
+	"need":[
+		"2015556"
+		] 
+	},
+	{
+	"code": "2015176",
+	"name": "Mecánica Newtoniana",
+	"cred": 4,
+	"hour": 4,	
+	"need":[
+		"2016377"
+		] 
+	},
+	{
+	"code": "2016342",
+	"name": "Cálculo de Ecuaciones Diferenciales Ordinarias",
+	"cred": 4,
+	"hour": 4,	
+	"need":[
+		"2015555","2016377"
+		] 
+	},
+	{
+	"code": "2015155",
+	"name": "Introducción al Análisis Real",
+	"cred": 4,
+	"hour": 4,	
+	"need":[
+		"2015181"
+		] 
+	},
+	{
+	"code": "2015178",
+	"name": "Probabilidad",
+	"cred": 4,
+	"hour": 4,	
+	"need":[
+		""
+		] 
+	},
+	{
+	"code": "1000017",
+	"name": "Fundamentos de Electricidad y Magnetísmo",
+	"cred": 4,
+	"hour": 4,	
+	"need":[
+		"2015176","2016377"
+		] 
+	},
+	{
+	"code": "2015152",
+	"name": "Grupos y Anillos",
+	"cred": 4,
+	"hour": 4,	
+	"need":[
+		"2025819"
+		] 
+	},{
+	"code": "2015153",
+	"name": "Integración y Series",
+	"cred": 4,
+	"hour": 4,	
+	"need":[
+		"2015155"
+		] 
+	},{
+	"code": "2015158",
+	"name": "Topología General",
+	"cred": 4,
+	"hour": 4,	
+	"need":[
+		"2015155"
+		] 
+	},{
+	"code": "2015150",
+	"name": "Análisis Númerico",
+	"cred": 4,
+	"hour": 4,	
+	"need":[
+		"2015155"
+		] 
+	},{
+	"code": "2015149",
+	"name": "Álgebra Multilineal y Formas Canónicas",
+	"cred": 4,
+	"hour": 4,	
+	"need":[
+		"2015152"
+		] 
+	},{
+	"code": "2015156",
+	"name": "Lógica Matemática",
+	"cred": 4,
+	"hour": 4,	
+	"need":[
+		"2015152"
+		] 
+	},{
+	"code": "2015157",
+	"name": "Teoría de Cuerpos",
+	"cred": 4,
+	"hour": 4,	
+	"need":[
+		"2015152"
+		] 
+	},{
+	"code": "2015159",
+	"name": "Variable Compleja",
+	"cred": 4,
+	"hour": 4,	
+	"need":[
+		"2015153"
+		] 
+	},{
+	"code": "2015151",
+	"name": "Análisis Vectorial",
+	"cred": 4,
+	"hour": 4,	
+	"need":[
+		"2015153","2015149"
+		] 
+	},{
+	"code": "",
+	"name": "Disciplinar I",
+	"cred": 4,
+	"hour": 4,	
+	"need":[
+		""
+		] 
+	},{
+	"code": "",
+	"name": "Disciplinar II",
+	"cred": 4,
+	"hour": 4,	
+	"need":[
+		""
+		] 
+	},{
+	"code": "",
+	"name": "Disciplinar III",
+	"cred": 4,
+	"hour": 4,	
+	"need":[
+		""
+		] 
+	},
+
+
+
+]
