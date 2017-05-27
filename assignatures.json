@@ -239,7 +239,7 @@
 	"cred": 3,
 	"hour": 4,	
 	"need":[
-		"2016702","2025967"
+		"2016701","2025967"
 		] 
 	},
 	{
@@ -393,7 +393,7 @@
 	"cred": 4,
 	"hour": 4,	
 	"need":[
-		""
+		
 		] 
 	},
 	{
@@ -420,7 +420,7 @@
 	"cred": 4,
 	"hour": 4,	
 	"need":[
-		""
+		
 		] 
 	},
 	{
@@ -449,7 +449,16 @@
 	"need":[
 		"2016377"
 		] 
+	},{
+	"code": "2016679",
+	"name": "Mecanica Analítica I",
+	"cred": 4,
+	"hour": 4,	
+	"need":[
+		"2015176"
+		] 
 	},
+
 	{
 	"code": "2016342",
 	"name": "Cálculo de Ecuaciones Diferenciales Ordinarias",
@@ -474,7 +483,7 @@
 	"cred": 4,
 	"hour": 4,	
 	"need":[
-		""
+		
 		] 
 	},
 	{
