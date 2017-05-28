@@ -185,10 +185,10 @@ class Assignature {
   
 
 
-  void display(int x, int y) {
+  void display(float x, float y,float size) {
 
 
-    float size = 170;
+   
     float sizeb = size*5/6;
     // Depende del tamaño
     textAlign(CENTER, CENTER);
@@ -249,11 +249,12 @@ class Assignature {
 
 
     //Componente
-    if (this.getComp() == "B") fill(255, 200, 0);
-    else if (this.getComp() == "C") fill(0, 120, 0);
-    else if (this.getComp() == "P") fill(100, 0, 130);
-    else if (this.getComp() == "L") fill(180, 240, 240);
-    else fill(255);    
+     colorMode(RGB);
+    if (this.getComp() .equals( "B")) fill(255, 200, 0);
+    else if (this.getComp().equals( "C")) fill(0, 120, 0);
+          else if (this.getComp() .equals( "P")) fill(100, 0, 130);
+                else if (this.getComp().equals( "L")) fill(180, 240, 240);
+                      else fill(255);    
     rect(x + size*3/4, y+sizeb*6/7, size/4, sizeb/7);
     fill(0);
     text(comp, x + size*3/4 +size/8, y+sizeb*6/7 + size/20);
@@ -277,7 +278,7 @@ class Assignature {
       suma += words.get(i).length();
       tempLine += words.get(i) + " ";
 
-      if (suma + i>25 || i == words.size() - 1) {
+      if (suma + i>17 || i == words.size() - 1) {
         wordsInLine.append(tempLine.substring(0, tempLine.length()-1));
         suma = 0;
         tempLine = "";

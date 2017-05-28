@@ -1,0 +1,95 @@
+﻿{
+  "code": "2879",
+  "name": "Ingeniería de Sistemas y Computación",
+  "creditos":{
+	"total": 165,
+	"credFUND": 51,
+	"credDISC": 81,
+	"credLIBR": 33
+  },
+  "components": [
+    {
+      "name": "Fundamentación",
+      "code": "B";
+      "agrupation": [
+        {
+          "name": "Matemáticas",         
+          "materias": [        
+	    "1000004","1000006","1000003","1000005"  
+          ]
+
+        },{
+
+          "name": "Probabilidad y estadística",          
+          "materias": [
+            "1000013"
+          ]
+
+        },{
+	   "name": "Física",
+	   "materias": [
+	      "1000019","1000017"
+	    ]	
+        },{
+	   "name": "Ciencias de la Computación",
+	   "materias": [
+	      "2015174","2016696","2025963","2025964","2015970"
+	    ]	
+        },{
+	   "name": "Ciencias Económicas y Administrativas",
+	   "materias": [
+	      "2015703","2015702"
+	    ]	
+        }
+      ]
+    },{
+	"name": "Disciplinar o Profesional",
+	"code": "C";
+	"agrupation":[
+	   {
+	   "name": "Métodos y Tecnologías de Software",
+	   "materias": [
+	      "2016375","2016699","2016701","2016702","2025966","2016716","2015734"
+	    ]	
+          }, {
+	   "name": " Infraestructura Computacional, de Comunicaciones y de Información",
+	   "materias": [
+	      "2016697","2016707","2025967","2016722","2016353","2025983","2016698","2025994","2025982","2025972"
+	    ]	
+          }, {
+	   "name": "Computación Visual",
+	   "materias": [
+	      "2025960"
+	    ]	
+          }, {
+	   "name": "Sistemas Inteligentes",
+	   "materias": [
+	      "2025995"
+	    ]	
+          }, {
+	   "name": "Modelos, Sistemas, Optimización y Simulación",
+	   "materias": [
+	      "2016703","2025969","2025970","2025971"
+	    ]	
+          }, {
+	   "name": "Contexto Profesional y Proyectos de Ingeniería",
+	   "materias": [
+	      "2025975","2024045"
+	    ]	
+          }
+	]
+      },{
+      "name": "Libre Elección",
+      "code": "L";
+      "agrupation": [
+        {
+          "name": "Profundización",         
+          "materias": [        
+	      
+          ]
+
+        }
+      ]
+    }
+  ]
+}

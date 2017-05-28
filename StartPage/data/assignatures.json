@@ -89,7 +89,7 @@
 	},
 	{
 	"code": "1000013",
-	"name": "Probabilidad y Estadística",
+	"name": "Probabilidad y Estadística Fundamental",
 	"cred": 3,
 	"hour": 4,	
 	"need":[
@@ -238,7 +238,7 @@
 	"cred": 3,
 	"hour": 4,	
 	"need":[
-		"2016702","2025967"
+		"2016701","2025967"
 		] 
 	},
 	{
@@ -337,7 +337,7 @@
 	"cred": 3,
 	"hour": 4,	
 	"need":[
-		
+		"2015702"
 		] 
 	},
 	{

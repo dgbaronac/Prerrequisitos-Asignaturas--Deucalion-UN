@@ -22,9 +22,10 @@ color barMenu;
 PFont menuFont;//Fuente para el menu
 PFont f;
 void setup() {
-
+   background(0);
+ 
   fullScreen();
-  
+
   cp5 = new ControlP5(this); 
   
   //inicializacion color botones y barra de menu
@@ -111,14 +112,14 @@ void setup() {
   println(" n° de componentes "+ testing.getComp().length);
   println("Componentes: ");
   printArray( testing.getComp());
-  background(50);
+
+
+ printArray(testing.pos(testing.getAssignature("1000004").getCode()));
+  testing.createDict();
+
   
- // testing.getAssignature("2025970").display(mouseX, mouseY);
-  
-  String[] sa = {"1000013", "1000004"};
-  testing.preline("2025966");
   testing.getAssignaturesLIST().sort();
-  
+
 //esta funcion a sido implementada en displayMalla()  
 ////////////////////////////////////////////  
  /* 
@@ -179,7 +180,7 @@ void loadData() {
         m.getValue().getAssignature(a[i]).askName(temp.getName());
         m.getValue().getAssignature(a[i]).askCredit(temp.getCredits());
         m.getValue().getAssignature(a[i]).askHour(temp.getHour());
-        m.getValue().getAssignature(a[i]).loadRequirements(temp.requirementsArray());       
+        m.getValue().getAssignature(a[i]).loadRequirements(temp.requirementsArray());             
         m.getValue().getAssignature(a[i]).askColor(colors[as.index(m.getValue().getAssignature(a[i]).getAgr())]);
       }
     }
@@ -189,7 +190,7 @@ void loadData() {
 
 
 void draw() {
-  background(100);
+  
   displayMalla();//Corregir para que las materias se empiezen a dibujar en y=50
                  //Se puede observar como se superponen con la barra de menu
   fill(barMenu);
@@ -210,14 +211,16 @@ void draw() {
 
 void displayMalla(){//Funcion que dibuja una malla
   //Valores para recorrer el for que dibuja las materias
-  int x = 0;
-  int y = 0;
-  for(String s: testing.getAssignatures()){ 
+  
+  testing.display();
+  //int x = 0;
+ //int y = 0;
+  /*for(String s: testing.getAssignatures()){ 
     testing.getAssignature(s).display(190*x++,180*y);
     if( 190*x> width -190){
       x = 0;
       y++;
     }
-  }
+  }*/
 }
    
