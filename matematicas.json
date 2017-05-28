@@ -10,7 +10,7 @@
   "components": [
     {
       "name": "Fundamentación",
-      "code": "B";
+      "code": "B",
       "agrupation": [
         {
           "name": "Matemáticas",         
@@ -35,7 +35,7 @@
 	   "materias": [
 	      "2015150","2015180"
 	    ]	
-        },,{
+        },{
 	   "name": "Probabilidad",
 	   "materias": [
 	      "2015178"
@@ -44,7 +44,7 @@
       ]
     },{
 	"name": "Disciplinar o Profesional",
-	"code": "C";
+	"code": "C",
 	"agrupation":[
 	   {
 	   "name": "Análisis y Topología",
@@ -60,7 +60,7 @@
 	]
       },{
       "name": "Libre Elección",
-      "code": "L";
+      "code": "L",
       "agrupation": [
         {
           "name": "Profundización",         
