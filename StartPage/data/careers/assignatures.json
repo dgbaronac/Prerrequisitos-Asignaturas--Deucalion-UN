@@ -30,8 +30,7 @@
 	"name": "Cálculo diferencial",
 	"cred": 4,
 	"hour": 6,	
-	"need":[	
-	
+	"need":[		
 		] 
 	},
 	{
@@ -358,6 +357,425 @@
 	"need":[
 		"1000013","2025967","2016696"
 		] 
+	},
+	{
+	"code": "2016377",
+	"name": "Cálculo diferencial en una variable",
+	"cred": 4,
+	"hour": 4,	
+	"need":[
+		
+		] 
+	},
+	{
+	"code": "2015556",
+	"name": "Cálculo integral en una variable",
+	"cred": 4,
+	"hour": 4,	
+	"need":[
+		"2016377"
+		] 
+	},
+	{
+	"code": "2015162",
+	"name": "Cálculo vectorial",
+	"cred": 4,
+	"hour": 4,	
+	"need":[
+		"2015556","2015555"
+		] 
+	},
+	{
+	"code": "2016342",
+	"name": "Cálculo de ecuaciones diferenciales ordinarias",
+	"cred": 4,
+	"hour": 4,	
+	"need":[
+		"2015556"
+		] 
+	},
+	{
+	"code": "2015555",
+	"name": "Álgebra lineal básica",
+	"cred": 4,
+	"hour": 4,	
+	"need":[		
+		] 
+	},
+	{
+	"code": "1000015",
+	"name": "Probabilidad fundamental",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2015556"
+		] 
+	},
+	{
+	"code": "2016651",
+	"name": "Fundamentos de física teórica",
+	"cred": 3,
+	"hour": 4,	
+	"need":[	
+		] 
+	},
+	{
+	"code": "2016650",
+	"name": "Fundamentos de física experimental",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		] 
 	}
+
+
+	,
+	{
+	"code": "2016653",
+	"name": "Taller de matemáticas y ciencias",
+	"cred": 3,
+	"hour": 4,	
+	"need":[	
+		] 
+	},
+	{
+	"code": "2015499",
+	"name": "Fundamentación geofísica",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2015176","2016657"
+		] 
+	},
+	{
+	"code": "2015560",
+	"name": "Geoeléctrica",
+	"cred": 3,
+	"hour": 4,	
+	"need":[	
+		"2015176","2016657"
+		] 
+	},
+
+
+	{
+	"code": "2015970",
+	"name": "Programación e introducción a los métodos numéricos",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2015155"
+		] 
+	},
+	
+
+
+
+	{
+	"code": "2016675",
+	"name": "Matemáticas especiales I para física",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2016342"
+		] 
+	},
+	
+
+
+
+	{
+	"code": "2016676",
+	"name": "Matemáticas especiales II para física",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2016342"
+		] 
+	}
+	,
+	
+
+
+
+	{
+	"code": "2016661",
+	"name": "Herramientas computacionales",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2015970"
+		] 
+	}	
+	,
+	
+
+
+
+	{
+	"code": "2015176",
+	"name": "Mecánica Newtoniana",
+	"cred": 4,
+	"hour": 4,	
+	"need":[
+		"2016377"
+		] 
+	},
+	
+
+
+
+	{
+	"code": "2016678",
+	"name": "Mediciones Mecánicas",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2016650"
+		] 
+	},
+	
+
+
+
+	{
+	"code": "2016679",
+	"name": "Mecánica analítica I",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2015176"
+		] 
+	},
+	
+
+
+
+	{
+	"code": "2016677",
+	"name": "Mecánica analítica II",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2016679"
+		] 
+	}
+,
+	
+
+
+
+	{
+	"code": "2016657",
+	"name": "Electricidad y Magnetismo",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2015556","2015162"
+		] 
+	}
+
+,
+	
+
+
+
+	{
+	"code": "2016680",
+	"name": "Mediciones Electromagnéticas",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2016650"
+		] 
+	}
+
+,
+	
+
+
+
+	{
+	"code": "2016658",
+	"name": "Electrodinámica I",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2016657", "2016675"
+		] 
+	}
+	,
+
+	{
+	"code": "2016659",
+	"name": "Electrodinámica II",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2016658"
+		] 
+	},
+
+	{
+	"code": "2016682",
+	"name": "Oscilaciones y Ondas",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2015176"
+		] 
+	},
+
+	{
+	"code": "2016681",
+	"name": "Mediciones en óptica y acústica",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2016682"
+		] 
+	},
+
+	{
+	"code": "2017260",
+	"name": "Electrónica Básica",
+	"cred": 3,
+	"hour": 4,	
+	"need":[		
+		] 
+	},
+
+	{
+	"code": "2016686",
+	"name": "Relatividad",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2016657"
+		] 
+	},
+
+	{
+	"code": "2016687",
+	"name": "Experimentos en física moderna",
+	"cred": 3,
+	"hour": 4,	
+	"need":[	
+	"2016682" , "2016680"
+		] 
+	},
+
+	{
+	"code": "2015554",
+	"name": "Mecánica Cuántica I",
+	"cred": 4,
+	"hour": 4,	
+	"need":[	
+	"2016687", "2016679", "2016675"
+		] 
+	},
+
+	{
+	"code": "2016688",
+	"name": "Mecánica Cuántica II",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2015554"		
+		] 
+	},
+
+
+
+
+	{
+	"code": "2016665",
+	"name": "Temas de Física Contemporánea",
+	"cred": 1,
+	"hour": 4,	
+	"need":[
+		"2016687"		
+		] 
+	},
+
+	{
+	"code": "2016664",
+	"name": "Técnicas de Caracterización A",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2016663"		
+		] 
+	},
+
+	{
+	"code": "2016689",
+	"name": "Introducción a la física subatómica",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2016688"		
+		] 
+	},
+
+
+	{
+	"code": "2016663",
+	"name": "Introducción al estado sólido",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2016690"
+		] 
+	},
+
+
+	{
+	"code": "2016691",
+	"name": "Termodinámica-módulo de teoría",
+	"cred": 2,
+	"hour": 4,	
+	"need":[
+		"2016657"
+		] 
+	},
+
+
+	{
+	"code": "2016693",
+	"name": "Termodinámica -módulo experimental",
+	"cred": 2,
+	"hour": 4,	
+	"need":[
+		"2016691","2016680"
+		] 
+	},
+
+
+	{
+	"code": "2016690",
+	"name": "Mecánica Estadística",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2015554","2016691"
+		] 
+	},
+
+
+	{
+	"code": "2016656",
+	"name": "Elasticidad y fluidos",
+	"cred": 3,
+	"hour": 4,	
+	"need":[
+		"2015162", "2016682"
+		] 
+	}
+
+
+
+
+
 
 ]

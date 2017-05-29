@@ -25,7 +25,7 @@ void setup() {
    background(0);
  
   fullScreen();
-
+//size(1280,900);
   cp5 = new ControlP5(this); 
   
   //inicializacion color botones y barra de menu
@@ -104,7 +104,7 @@ void setup() {
   println("nombre: " + testing.getName());
   println("Código: " + testing.getCode());
   println(" n° de materias " + testing.getAssignatures().length);
-  println("Materias: ");
+ println("Materias: ");
   printArray( testing.getAssignatures());
   println(" n° de agrupaciones " + testing.getAgrupations().length);
   println("Agrupaciones: ");
@@ -114,13 +114,14 @@ void setup() {
   printArray( testing.getComp());
 
 
- printArray(testing.pos(testing.getAssignature("1000004").getCode()));
+ //printArray(testing.related(testing.getAssignature("2015702").getCode()));
   testing.createDict();
-
-  
+  for(int i = 0; i<testing.related("2025960").size();i++){
+    testing.getAssignature(testing.related("2025960").get(i)).askOpac(100);
+  }
   testing.getAssignaturesLIST().sort();
-
-//esta funcion a sido implementada en displayMalla()  
+  
+//esta funcion ha sido implementada en displayMalla()  
 ////////////////////////////////////////////  
  /* 
   for(String s: testing.getAssignatures()){ 
@@ -222,5 +223,10 @@ void displayMalla(){//Funcion que dibuja una malla
       y++;
     }
   }*/
+}
+
+void mousePressed(){
+
+ testing.askCurrent("2016707");
 }
    

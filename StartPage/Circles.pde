@@ -2,6 +2,7 @@ class Circles extends Button{
   
   Integer[] index;
   HashMap<Integer,PVector> positions;
+  Boolean mouseover;
   
   
 
@@ -24,16 +25,16 @@ class Circles extends Button{
     void declarateLists() {
         positions = new HashMap<Integer,PVector>();
   }
-Boolean over(Integer s,float px, float py){
+void over(Integer s,float px, float py){
   
   if(positions.containsKey(s)){
     float distance = dist(px,py,positions.get(s).x,positions.get(s).y);
-  if(distance < size/8) return true;
+  if(distance < size/8) mouseover = true;
    
     
   }
   
- return false;
+ mouseover = false;
 
 
 }
@@ -43,7 +44,6 @@ Boolean over(Integer s,float px, float py){
   
 void display(){
   
-   
       ellipseMode(CORNER);
       if (index.length == 0) return;
       for(int i = 0; i<index.length;i++){
