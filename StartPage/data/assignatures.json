@@ -16,22 +16,14 @@
 	"need":[
 		"1000004"
 		] 
-	},
-	{
-	"code": "1000001",
-	"name": "Matemáticas Basicas",
-	"cred": 4,
-	"hour": 6,	
-	"need":[		
-		] 
-	},
+	},	
 	{
 	"code": "1000004",
 	"name": "Cálculo diferencial",
 	"cred": 4,
 	"hour": 6,	
 	"need":[	
-	
+
 		] 
 	},
 	{

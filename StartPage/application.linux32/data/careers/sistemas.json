@@ -10,7 +10,7 @@
   "components": [
     {
       "name": "Fundamentación",
-      "code": "B";
+      "code": "B",
       "agrupation": [
         {
           "name": "Matemáticas",         
@@ -44,7 +44,7 @@
       ]
     },{
 	"name": "Disciplinar o Profesional",
-	"code": "C";
+	"code": "C",
 	"agrupation":[
 	   {
 	   "name": "Métodos y Tecnologías de Software",
@@ -80,7 +80,7 @@
 	]
       },{
       "name": "Libre Elección",
-      "code": "L";
+      "code": "L",
       "agrupation": [
         {
           "name": "Profundización",         

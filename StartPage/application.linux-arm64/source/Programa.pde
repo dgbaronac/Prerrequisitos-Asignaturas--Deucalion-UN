@@ -2,14 +2,17 @@ class Career {
 
   String code;
   String name;
-
+  String current;
   int cred;
   int credFUND;
   int credDISC;
   int credLIBR;
   int semTotal;
+  int displayColor;
   IntDict semestres;
   HashMap<Integer, String> sem;
+  HashMap<String, Integer> index;
+  HashMap<String, PVector> positions;
 
 
 
@@ -29,6 +32,7 @@ class Career {
     askCreditsFUND(0);
     askCreditsDISC(0);
     askCreditsLIBR(0);
+    askColor(100);
     declarateLists();
     askSem(10);
   }
@@ -43,6 +47,8 @@ class Career {
     askCreditsDISC(plan.getJSONObject("creditos").getInt("credDISC"));
     askCreditsLIBR(plan.getJSONObject("creditos").getInt("credLIBR"));
     createHierarchy(plan.getJSONArray("components"));
+    askCurrent("0000000");
+    askColor(100);
     askSem(10);
   }
 
@@ -81,7 +87,9 @@ class Career {
     hierarchy = new JSONArray();
     colors = new StringList();
     localAssignatures = new HashMap<String, Assignature>();
+    index = new HashMap<String, Integer>();
     semestres = new IntDict();
+    positions = new HashMap<String, PVector>();
   }
 
 
@@ -109,7 +117,13 @@ class Career {
   void decreaseSem() {
     semTotal++;
   }
-
+ //Color del fondo
+   void askColor(int tempColor) {
+    displayColor = tempColor;
+  }
+  int getColor() {
+    return displayColor;
+  }
 
   //Nombre
   void askName(String tempName) {
@@ -118,7 +132,13 @@ class Career {
   String getName() {
     return name;
   }
-
+  //
+  void askCurrent(String tempCurrent) {
+    current = tempCurrent;
+  }  
+  String getCurrent() {
+    return current;
+  } 
   //Creditos
   void askCredits(int tempCode) {
     cred = tempCode;
@@ -168,15 +188,23 @@ class Career {
     String[] lista = compList.array();
     return lista;
   }
-  
+
   Assignature getAssignature(String cod) {
 
 
     if (localAssignatures.containsKey(cod))return localAssignatures.get(cod);
     else return new Assignature();
   }
-  
-  
+
+  HashMap<String, PVector> positions() {
+
+    return positions;
+  }
+   HashMap<String, Integer> index() {
+
+    return index;
+  }
+
   void createHierarchy(JSONArray components) {
     hierarchy = components;
     //if(components.size() > 0){
@@ -219,7 +247,7 @@ class Career {
       tempsemestres.set(map.getValue().getCode(), 1+preline(map.getValue().getCode()));
     }
     tempsemestres.sortValues();
-    print(tempsemestres);
+
     IntDict temp = new IntDict();
     for ( Integer i = 1; i<=semTotal; i++) {
       temp.set(i.toString(), 0);
@@ -246,14 +274,40 @@ class Career {
 
 
     semestres.sortValues();
-
+    Integer x = 1;
+    for (String s : semestres.keys()) {
+      index.put(s, x++);
+    }
   }
-  
-  void buttons(float x,float y,float size){
-  
-  
-  
-  
+
+
+
+  void buttons(float x, float y, float size, String s) {
+
+
+    colorMode(HSB);
+    fill(170, 200, 50);
+    colorMode(RGB);    
+    rect(x + 2*size/3, y, size/3, 5*size/42);
+    fill(255);    
+    text(index.get(s), x + 5*size/6, y+size/21);
+
+
+    String[] list = localAssignatures.get(s).requirementsArray().array();
+    IntDict ord = new IntDict();
+
+
+
+    for ( int i = 0; i< list.length; i++) {
+      ord.set(list[i], index.get(list[i]));
+    }
+
+
+    ord.sortValues();
+    if (list.length == 0) return;
+
+    Circles boton = new Circles(x, y, size, ord.valueArray())   ;
+    boton.display();
   }
 
 
@@ -277,7 +331,7 @@ class Career {
     }
     return x;
   }
-  
+
 
   int preline(String s) {
     int x = 0;
@@ -344,7 +398,35 @@ class Career {
     return x + preline(temp.array());
   }
 
+  StringList related(String m) {
+    StringList temp = new StringList(pos(m));
+    temp.append(m);
+    temp.append(localAssignatures.get(m).requirementsArray());
 
+
+    temp.append(related(localAssignatures.get(m).requirementsArray()));
+
+
+
+
+    return new StringList(temp.getUnique());
+  }
+
+  String[] related(StringList s) {
+
+    StringList temp = new StringList();
+    if (s.size() == 0) return temp.array();
+    for (int i = 0; i<s.size(); i++) {
+      temp.append(localAssignatures.get(s.get(i)).requirementsArray());
+    }
+
+    if (temp.size()== 0) return temp.array();
+
+    temp.append(related(temp));
+
+
+    return temp.getUnique();
+  }
 
   String[] pos(String s) {
 
@@ -367,8 +449,31 @@ class Career {
     }
     return m;
   }
+  
+  
+  
+  
+  
+  
+  
+  
 
   void display() {
+
+    for (Map.Entry<String, Assignature> map : localAssignatures.entrySet()) {
+      map.getValue().askOpac(255);
+      if (localAssignatures.containsKey(current)) {
+        if (!related(current).hasValue(map.getKey())) {
+
+          map.getValue().askOpac(90);
+        }
+      }
+    }
+    Assignature example = new Assignature();
+    example.askCode("Código");
+    example.askName("NOMBRE DE LA ASIGNATURA");
+    example.askAgr("NOMBRE DE LA AGRUPACIÓN");
+
     HashMap<Integer, Integer> mporsem = new HashMap<Integer, Integer>();
 
     for (int i = 1; i<= semTotal; i++) {
@@ -378,13 +483,14 @@ class Career {
       }
       mporsem.put(i, x);
     }
-  colorMode(HSB);
+    colorMode(HSB);
+
     for (int i = 0; i<semTotal; i++) {
-   noStroke();
-    fill(120,150,20+(semTotal -i)*15);
-      
+      noStroke();
+      fill(getColor(), 100, 20+(semTotal -i)*15);
+
       rect(i*width/semTotal, 0, (i+1)*width/semTotal, height);
-    stroke(0);
+      stroke(0);
     }
     float tempSize = width/semTotal;
 
@@ -392,10 +498,29 @@ class Career {
     float y = 0;
 
     for (String s : semestres.keys()) {
-
+      PVector pos = new PVector(tempSize*0.1 + tempSize*(-1+semestres.get(localAssignatures.get(s).getCode())), height/14 + y*tempSize);
+      positions.put(s,pos);
       localAssignatures.get(s).display( tempSize*0.1 + tempSize*(-1+semestres.get(localAssignatures.get(s).getCode())), height/14 + y*tempSize, tempSize*0.8);
+      buttons(tempSize*0.1 + tempSize*(-1+semestres.get(localAssignatures.get(s).getCode())), height/14 + y*tempSize, tempSize*0.8, s);
       y++;
       if (y>= mporsem.get(semestres.get(localAssignatures.get(s).getCode()))  ) y = 0;
     }
+    example.display(10, height-width/semTotal, 0.9*width/semTotal);
+    fill(0);
+    rect(10, height-width/semTotal, 0.3*width/semTotal, 20);
+    fill(255);
+    text("Créditos", 10+ 0.15*width/semTotal, 8+height-width/semTotal);
+    fill(130);
+    rect(10 + 0.3*width/semTotal, height-width/semTotal, 0.3*width/semTotal, 20);
+    fill(0);
+    text("Horas", 0.3*width/semTotal+10+ 0.15*width/semTotal, 8+height-width/semTotal);
+    text("ID", 0.6*width/semTotal+10+ 0.15*width/semTotal, 8+height-width/semTotal);
+      rect(0, 0, width, 50);//Barra del menu
+      colorMode(HSB);
+  fill(getColor(),100,100);
+  colorMode(RGB);
+  textSize(25);
+  textFont(menuFont,30);
+  text(getCode() + "    " +getName().toUpperCase() + "     " + "Malla estándar", width/2, 20);
   }
 }

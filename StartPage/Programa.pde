@@ -459,6 +459,7 @@ class Career {
   
 
   void display() {
+
     for (Map.Entry<String, Assignature> map : localAssignatures.entrySet()) {
       map.getValue().askOpac(255);
       if (localAssignatures.containsKey(current)) {
@@ -514,5 +515,12 @@ class Career {
     fill(0);
     text("Horas", 0.3*width/semTotal+10+ 0.15*width/semTotal, 8+height-width/semTotal);
     text("ID", 0.6*width/semTotal+10+ 0.15*width/semTotal, 8+height-width/semTotal);
+      rect(0, 0, width, 50);//Barra del menu
+      colorMode(HSB);
+  fill(getColor(),100,100);
+  colorMode(RGB);
+  textSize(25);
+  textFont(menuFont,30);
+  text(getCode() + "    " +getName().toUpperCase() + "     " + "Malla estándar", width/2, 20);
   }
 }

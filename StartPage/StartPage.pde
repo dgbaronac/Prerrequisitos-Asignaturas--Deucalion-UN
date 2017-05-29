@@ -34,8 +34,8 @@ void setup() {
   colorSelected= color(100, 100, 200);
   barMenu=color(160, 160, 160);
 
-  f = createFont("Calibri", 16, true);
-  menuFont = createFont("arial", 14);
+  f = createFont("L", 16, true);
+  menuFont = createFont("Calibri", 12);
 
   assignatures = new HashMap<String, Assignature>();
   careers = new HashMap<String, Career>();  
@@ -46,73 +46,78 @@ void setup() {
   for (Map.Entry<String, Career> m : careers.entrySet()) {
     tempList.append(m.getValue().getName());
   }
-  printArray(tempList.array());
+
 
 
   testing = careers.get("2879");
 
-  printArray(careerKeys.array());
+
 
   //Menu Lista desplegable del plan de estudios  
-  cp5.addDropdownList("Plan de estudios") 
-    .setOpen(false) 
-    .setPosition(5, 5)                                   
-    .setWidth(320)//Largo lista desplegable
-    .setHeight(200)//Tamaño lista desplegable                  
-    .setBarHeight(40)//alto barra principal
-    .setItemHeight(25)//alto barra items
-    .addItems(tempList.array()) //AQUI VA LA LISTA CON EL NOMBRE DE LAS CARRERAS                 
-    .setColorBackground(colorInactive)                  
-    .setColorForeground(colorSelected)
-    .setColorActive(colorActive)
-    .setColorLabel(0) 
-    .setColorValue(color(50, 50, 50))
-    .setFont(createFont("arial", 14))
-    ;    
+  /*cp5.addDropdownList("Plan de estudios") 
+   .setOpen(false)
+   .setVisible(false)
+   .setPosition(5, 5)                                   
+   .setWidth(320)//Largo lista desplegable
+   .setHeight(200)//Tamaño lista desplegable                  
+   .setBarHeight(40)//alto barra principal
+   .setItemHeight(25)//alto barra items
+   .addItems(tempList.array()) //AQUI VA LA LISTA CON EL NOMBRE DE LAS CARRERAS                 
+   .setColorBackground(colorInactive)                  
+   .setColorForeground(colorSelected)
+   .setColorActive(colorActive)
+   .setColorLabel(0) 
+   .setColorValue(color(50, 50, 50))
+   .setFont(createFont("arial", 14))
+   ;    
+   
+   cp5.addBang("Materias")//añade un boton para visualizar la lista de materias
+   .setPosition(330, 5)
+   .setVisible(false)
+   .setSize(80, 40)
+   .setColorForeground(colorInactive)
+   .setColorActive(colorSelected)
+   .setColorCaptionLabel(0) 
+   .setFont(createFont("arial", 14))         
+   .getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER)
+   ;  
+   
+   cp5.addBang("Malla")//añade un boton para visualizar la malla curricular
+   .setPosition(415, 5)
+   .setVisible(false)
+   .setSize(80, 40)
+   .setColorForeground(colorInactive)
+   .setColorActive(colorSelected)
+   .setColorCaptionLabel(0) 
+   .setFont(createFont("arial", 14))         
+   .getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER)
+   ;  */
 
-  cp5.addBang("Materias")//añade un boton para visualizar la lista de materias
-    .setPosition(330, 5)
-    .setSize(80, 40)
-    .setColorForeground(colorInactive)
-    .setColorActive(colorSelected)
-    .setColorCaptionLabel(0) 
-    .setFont(createFont("arial", 14))         
-    .getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER)
-    ;  
 
-  cp5.addBang("Malla")//añade un boton para visualizar la malla curricular
-    .setPosition(415, 5)
-    .setSize(80, 40)
-    .setColorForeground(colorInactive)
-    .setColorActive(colorSelected)
-    .setColorCaptionLabel(0) 
-    .setFont(createFont("arial", 14))         
-    .getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER)
-    ;   
 
-  println(careers.size());
-  println(assignatures.size());
+  println();
 
-  for (Map.Entry<String, Assignature> m : assignatures.entrySet()) {
+ 
+  println("Nombre del programa: " + testing.getName());
+
+  println("Código: " + testing.getCode());
+    println();
+    println("Componentes: (" + testing.getComp().length+")");
+    println();
+  printArray( testing.getComp());
+println();
+  println("Agrupaciones: ("+testing.getAgrupations().length+ ")");
+  println();
+  printArray( testing.getAgrupations());
+println();
+
+  println("Materias: (" +   testing.getAssignatures().length + ")");
+  println();
+    for (Map.Entry<String, Assignature> m : assignatures.entrySet()) {
     println(m.getValue().getName() + " " + m.getKey());
   }
   println();
-  for (Map.Entry<String, Career> m : careers.entrySet()) {
-    println(m.getValue().getName() + " " + m.getKey());
-  }
-  println(careers.size());
-  println("nombre: " + testing.getName());
-  println("Código: " + testing.getCode());
-  println(" n° de materias " + testing.getAssignatures().length);
-  println("Materias: ");
-  printArray( testing.getAssignatures());
-  println(" n° de agrupaciones " + testing.getAgrupations().length);
-  println("Agrupaciones: ");
-  printArray( testing.getAgrupations());
-  println(" n° de componentes "+ testing.getComp().length);
-  println("Componentes: ");
-  printArray( testing.getComp());
-
+  
 
 
   testing.createDict();
@@ -206,8 +211,8 @@ void draw() {
 
   displayMalla();//Corregir para que las materias se empiezen a dibujar en y=50
   //Se puede observar como se superponen con la barra de menu
-  fill(barMenu);
-  rect(0, 0, width, 50);//Barra del menu
+  //fill(barMenu);
+
 }
 
 /*void controlEvent(ControlEvent theEvent){//Para controlar lo que hacen los botones del menu
@@ -243,14 +248,14 @@ void displayMalla() {//Funcion que dibuja una malla
 public void controlEvent(ControlEvent theEvent) {
   for (String s : testing.getAssignaturesLIST()) {
     if (theEvent.getController().getName().equals(s)) {
-      if(testing.getCurrent().equals(s) == false) testing.askCurrent(s); else testing.askCurrent("0000000");
+      if (testing.getCurrent().equals(s) == false) testing.askCurrent(s); 
+      else testing.askCurrent("0000000");
     }
   }
 }
 
 
-void colored(){
+void colored() {
 
-testing.askColor((testing.getColor()+1)%255);
-
+  testing.askColor((testing.getColor()+1)%255);
 }

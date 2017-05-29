@@ -41,115 +41,133 @@ int barMenu;
 PFont menuFont;//Fuente para el menu
 PFont f;
 public void setup() {
-   background(0);
- 
-  
+  background(0);
 
+  
+  //size(1280,900);
   cp5 = new ControlP5(this); 
-  
-  //inicializacion color botones y barra de menu
-  colorInactive= color(150,150,150);
-  colorActive= color(50,50,100);
-  colorSelected= color(100,100,200);
-  barMenu=color(160,160,160);
 
-  f = createFont("Calibri", 16, true);
-  menuFont = createFont("arial",14);
-  
+  //inicializacion color botones y barra de menu
+  colorInactive= color(150, 150, 150);
+  colorActive= color(50, 50, 100);
+  colorSelected= color(100, 100, 200);
+  barMenu=color(160, 160, 160);
+
+  f = createFont("L", 16, true);
+  menuFont = createFont("Calibri", 12);
+
   assignatures = new HashMap<String, Assignature>();
   careers = new HashMap<String, Career>();  
-  
-  loadData();
-  
-  StringList tempList = new StringList();
-  for(Map.Entry<String,Career> m: careers.entrySet()){
-   tempList.append(m.getValue().getName());
-  }
-  printArray(tempList.array());
-  
-  
-  testing = careers.get("2879");
-  
-  printArray(careerKeys.array());
-  
-  //Menu Lista desplegable del plan de estudios  
-  cp5.addDropdownList("Plan de estudios") 
-     .setOpen(false) 
-     .setPosition(5,5)                                   
-     .setWidth(320)//Largo lista desplegable
-     .setHeight(200)//Tama\u00f1o lista desplegable                  
-     .setBarHeight(40)//alto barra principal
-     .setItemHeight(25)//alto barra items
-     .addItems(tempList.array()) //AQUI VA LA LISTA CON EL NOMBRE DE LAS CARRERAS                 
-     .setColorBackground(colorInactive)                  
-     .setColorForeground(colorSelected)
-     .setColorActive(colorActive)
-     .setColorLabel(0) 
-     .setColorValue(color(50,50,50))
-     .setFont(createFont("arial",14))
-     ;    
-  
-  cp5.addBang("Materias")//a\u00f1ade un boton para visualizar la lista de materias
-     .setPosition(330,5)
-     .setSize(80,40)
-     .setColorForeground(colorInactive)
-     .setColorActive(colorSelected)
-     .setColorCaptionLabel(0) 
-     .setFont(createFont("arial",14))         
-     .getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER)
-     ;  
-  
-  cp5.addBang("Malla")//a\u00f1ade un boton para visualizar la malla curricular
-     .setPosition(415,5)
-     .setSize(80,40)
-     .setColorForeground(colorInactive)
-     .setColorActive(colorSelected)
-     .setColorCaptionLabel(0) 
-     .setFont(createFont("arial",14))         
-     .getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER)
-     ;   
-  
-  println(careers.size());
-  println(assignatures.size());
 
-  for (Map.Entry<String, Assignature> m : assignatures.entrySet()) {
+  loadData();
+
+  StringList tempList = new StringList();
+  for (Map.Entry<String, Career> m : careers.entrySet()) {
+    tempList.append(m.getValue().getName());
+  }
+
+
+
+  testing = careers.get("2879");
+
+
+
+  //Menu Lista desplegable del plan de estudios  
+  /*cp5.addDropdownList("Plan de estudios") 
+   .setOpen(false)
+   .setVisible(false)
+   .setPosition(5, 5)                                   
+   .setWidth(320)//Largo lista desplegable
+   .setHeight(200)//Tama\u00f1o lista desplegable                  
+   .setBarHeight(40)//alto barra principal
+   .setItemHeight(25)//alto barra items
+   .addItems(tempList.array()) //AQUI VA LA LISTA CON EL NOMBRE DE LAS CARRERAS                 
+   .setColorBackground(colorInactive)                  
+   .setColorForeground(colorSelected)
+   .setColorActive(colorActive)
+   .setColorLabel(0) 
+   .setColorValue(color(50, 50, 50))
+   .setFont(createFont("arial", 14))
+   ;    
+   
+   cp5.addBang("Materias")//a\u00f1ade un boton para visualizar la lista de materias
+   .setPosition(330, 5)
+   .setVisible(false)
+   .setSize(80, 40)
+   .setColorForeground(colorInactive)
+   .setColorActive(colorSelected)
+   .setColorCaptionLabel(0) 
+   .setFont(createFont("arial", 14))         
+   .getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER)
+   ;  
+   
+   cp5.addBang("Malla")//a\u00f1ade un boton para visualizar la malla curricular
+   .setPosition(415, 5)
+   .setVisible(false)
+   .setSize(80, 40)
+   .setColorForeground(colorInactive)
+   .setColorActive(colorSelected)
+   .setColorCaptionLabel(0) 
+   .setFont(createFont("arial", 14))         
+   .getCaptionLabel().align(ControlP5.CENTER, ControlP5.CENTER)
+   ;  */
+
+
+
+  println();
+
+ 
+  println("Nombre del programa: " + testing.getName());
+
+  println("C\u00f3digo: " + testing.getCode());
+    println();
+    println("Componentes: (" + testing.getComp().length+")");
+    println();
+  printArray( testing.getComp());
+println();
+  println("Agrupaciones: ("+testing.getAgrupations().length+ ")");
+  println();
+  printArray( testing.getAgrupations());
+println();
+
+  println("Materias: (" +   testing.getAssignatures().length + ")");
+  println();
+    for (Map.Entry<String, Assignature> m : assignatures.entrySet()) {
     println(m.getValue().getName() + " " + m.getKey());
   }
   println();
-  for (Map.Entry<String, Career> m : careers.entrySet()) {
-    println(m.getValue().getName() + " " + m.getKey());
-  }
-  println(careers.size());
-  println("nombre: " + testing.getName());
-  println("C\u00f3digo: " + testing.getCode());
-  println(" n\u00b0 de materias " + testing.getAssignatures().length);
-  println("Materias: ");
-  printArray( testing.getAssignatures());
-  println(" n\u00b0 de agrupaciones " + testing.getAgrupations().length);
-  println("Agrupaciones: ");
-  printArray( testing.getAgrupations());
-  println(" n\u00b0 de componentes "+ testing.getComp().length);
-  println("Componentes: ");
-  printArray( testing.getComp());
-
-
- printArray(testing.pos(testing.getAssignature("1000004").getCode()));
-  testing.createDict();
-
   
+
+
+  testing.createDict();
+  for (int i = 0; i<testing.related("2025960").size(); i++) {
+    testing.getAssignature(testing.related("2025960").get(i)).askOpac(100);
+  }
   testing.getAssignaturesLIST().sort();
 
-//esta funcion a sido implementada en displayMalla()  
-////////////////////////////////////////////  
- /* 
-  for(String s: testing.getAssignatures()){ 
-    testing.getAssignature(s).display(190*x++,180*y);
-    if( 190*x> width -190){
-      x = 0;
-      y++;
-    }
+  //esta funcion ha sido implementada en displayMalla()  
+  ////////////////////////////////////////////  
+  /* 
+   for(String s: testing.getAssignatures()){ 
+   testing.getAssignature(s).display(190*x++,180*y);
+   if( 190*x> width -190){
+   x = 0;
+   y++;
+   }
+   }
+   */
+
+  testing.display();
+  for (String s : testing.getAssignaturesLIST()) {
+    cp5.addBang(s)
+      .setPosition(testing.positions.get(s).x -PApplet.parseInt(width/100), testing.positions.get(s).y)
+      .setSize(PApplet.parseInt(width/100), (int)(width/105))
+      .setId(testing.index.get(s))
+      .setColorActive(color(200)) 
+      .setColorForeground(color(50)) 
+      .setLabelVisible(false)
+      ;
   }
-  */
   /////////////////////////////////////////
 }
 
@@ -178,7 +196,7 @@ public void loadData() {
     JSONObject temp = careersjson.getJSONObject(i);    
     careers.put(temp.getString("code"), new Career(temp));
   }
-  
+
 
 
 
@@ -187,7 +205,7 @@ public void loadData() {
     StringList as = new StringList(m.getValue().getAgrupations());
     int colorsize = m.getValue().getAgrupations().length;
     int[] colors = new int[colorsize];
-   
+
     for (int i = 0; i< colors.length; i++) {
       colorMode(HSB);
       colors[i] = color(255*i/colors.length, 200, 200);
@@ -209,45 +227,187 @@ public void loadData() {
 
 
 public void draw() {
-  
+
   displayMalla();//Corregir para que las materias se empiezen a dibujar en y=50
-                 //Se puede observar como se superponen con la barra de menu
-  fill(barMenu);
-  rect(0,0,width,50);//Barra del menu                 
+  //Se puede observar como se superponen con la barra de menu
+  //fill(barMenu);
+
 }
 
 /*void controlEvent(ControlEvent theEvent){//Para controlar lo que hacen los botones del menu
-   if(theEvent.isController()) {
-     
-      print("control event from : "+theEvent.controller().name());
-      println(", value : "+theEvent.controller().value());
-    
-      if(theEvent.controller().name()=="Malla") {//para el boton Malla
-           displayMalla();
-      }
-   }
-}*/
+ if(theEvent.isController()) {
+ 
+ print("control event from : "+theEvent.controller().name());
+ println(", value : "+theEvent.controller().value());
+ 
+ if(theEvent.controller().name()=="Malla") {//para el boton Malla
+ displayMalla();
+ }
+ }
+ }*/
 
-public void displayMalla(){//Funcion que dibuja una malla
+public void displayMalla() {//Funcion que dibuja una malla
   //Valores para recorrer el for que dibuja las materias
-  
+
   testing.display();
+  colored();
+
   //int x = 0;
- //int y = 0;
+  //int y = 0;
   /*for(String s: testing.getAssignatures()){ 
-    testing.getAssignature(s).display(190*x++,180*y);
-    if( 190*x> width -190){
-      x = 0;
-      y++;
-    }
-  }*/
+   testing.getAssignature(s).display(190*x++,180*y);
+   if( 190*x> width -190){
+   x = 0;
+   y++;
+   }
+   }*/
 }
+
+
+public void controlEvent(ControlEvent theEvent) {
+  for (String s : testing.getAssignaturesLIST()) {
+    if (theEvent.getController().getName().equals(s)) {
+      if (testing.getCurrent().equals(s) == false) testing.askCurrent(s); 
+      else testing.askCurrent("0000000");
+    }
+  }
+}
+
+
+public void colored() {
+
+  testing.askColor((testing.getColor()+1)%255);
+}
+abstract class Button {
+  float x;
+  float y;
+  float size;
+  String code;
+  Button() {
+    askx(0);
+    asky(0);
+    askCode("0");
+    askSize(10);   
+  }
+  
+  public abstract void display();
+
+
+  public float getx() {
+    return x;
+  }
+  public Button askx(float tempx) {
+    x = tempx;
+    return this;
+  }
+
+  public float gety() {
+    return y;
+  }
+  public Button asky(float tempy) {
+    y = tempy;
+    return this;
+  }
+
+  public float getSize() {
+    return size;
+  }
+  public Button askSize(float tempSize) {
+    size = tempSize;
+    
+    return this;
+  }
+
+  public String code() {
+
+    return code;
+  }
+  public Button askCode(String tempCode) {
+    code = tempCode;
+    return this;
+  }
+}
+class Circles extends Button{
+  
+  Integer[] index;
+  HashMap<Integer,PVector> positions;
+  Boolean mouseover;
+  
+  
+
+  Circles(){
+    
+  
+  }
+  Circles(float tempx, float tempy, float tempsize, int[] templist){
+  askx(tempx);
+  asky(tempy);
+  askSize(tempsize);
+  declarateLists();
+  Integer[] tempIndex = new Integer[templist.length];
+  for(int i = 0; i<templist.length;i++){
+    tempIndex[i] = templist[i];
+  }
+  askIndex(tempIndex);
+  }
+  
+    public void declarateLists() {
+        positions = new HashMap<Integer,PVector>();
+  }
+public void over(Integer s,float px, float py){
+  
+  if(positions.containsKey(s)){
+    float distance = dist(px,py,positions.get(s).x,positions.get(s).y);
+  if(distance < size/8) mouseover = true;
    
+    
+  }
+  
+ mouseover = false;
+
+
+}
+
+
+
+  
+public void display(){
+  
+      ellipseMode(CORNER);
+      if (index.length == 0) return;
+      for(int i = 0; i<index.length;i++){
+      colorMode(HSB);
+      fill(150,150,(i+1)*255/index.length);
+      colorMode(RGB);
+       ellipse(x + i*size/4,y+size*5/6,size/4,size/4);
+       PVector pos = new PVector( x +i*size/4 +size/8 , y+size*5/6 + size/8);
+       positions.put(index[i],pos);
+       fill(0);
+       text(index[i],x+size/8 + i*size/4,y +size*0.96f);
+    
+    }
+  
+
+
+}
+
+public Integer[] index(){
+ return index;
+}
+
+public void askIndex(Integer[] tempIndex){
+index = tempIndex;
+}
+
+
+
+}
 class Assignature {
   String name;
   String code;
   int cred;
   int hour; 
+  int opac;
   StringList prerequisites;
   String agr;
   int agrColor;
@@ -265,6 +425,7 @@ class Assignature {
     askHour(0);
     askAgr("N/A");
     askComp("");
+    askOpac(255);
     askColor(200);
     initRequire();
   }
@@ -278,6 +439,7 @@ class Assignature {
     askAgr("");
     askComp("");
     askColor(0);
+    askOpac(255);
     initRequire();    
     addRequirement(temp.getJSONArray("need").getStringArray());
   }
@@ -334,7 +496,12 @@ class Assignature {
     return cred;
   }
 
-
+  public void askOpac(Integer tempOpac) {
+    opac = tempOpac;
+  }
+  public Integer getOpac() {
+    return opac;
+  }
 
 
   //Horas
@@ -439,47 +606,47 @@ class Assignature {
     textAlign(CENTER, CENTER);
     textFont(f, size*3/40);
     noStroke();
-    fill(0);
+    fill(0,opac);
     rect(x, y, size, sizeb);
 
     //Cr\u00e9ditos
 
     rect(x, y, size/3, sizeb/7);
-    fill(255);
+    fill(255,opac);
     text(cred, x+size/6, y+sizeb/14);
 
     //Horas Presenciales
-    fill(200);
+    fill(200,opac);
     rect(x+size/3, y, size/3, sizeb/7);
-    fill(0);
+    fill(0,opac);
     text(hour, x+size/6 + size/3, y+sizeb/14);
 
 
 
     //Espacio para bot\u00f3n
 
-    fill(225);
+    fill(225,opac);
     rect(x+2*size/3, y, size/3, sizeb/7); 
-    fill(0);
+    fill(0,opac);
 
 
 
     // Nombre
     textFont(f, size*3/45);
-    fill(255);
+    fill(255,opac);
     rect(x, y+sizeb/7, size, 3*sizeb/7);
-    fill(0);
+    fill(0,opac);
     //Funci\u00f3n para salto de linea TODO
     printName(name, x, y, size, sizeb);
 
 
 
     // Agrupaci\u00f3n
-    textFont(f, size*3/55);
-    fill(agrColor);//TEMPORAL: OFRECIDO POR LA AGRUPACI\u00d3N
+    textFont(f, size*3/50);
+    fill(agrColor,opac);//TEMPORAL: OFRECIDO POR LA AGRUPACI\u00d3N
 
     rect(x, y+4*sizeb/7, size, 2*sizeb/7);
-    fill(0);
+    fill(0,opac);
     printAgr(agr, x, y, size, sizeb);
 
 
@@ -487,20 +654,21 @@ class Assignature {
 
     //C\u00f3digo
     textFont(f, size*3/40);
-    fill(20);
+    fill(20,opac);
     rect(x, y+sizeb*6/7, size*3/4, sizeb/7);
-    fill(255);
+    fill(255,opac);
     text(code, x + size/3, y + sizeb*13/14);
 
 
     //Componente
-    if (this.getComp() == "B") fill(255, 200, 0);
-    else if (this.getComp() == "C") fill(0, 120, 0);
-    else if (this.getComp() == "P") fill(100, 0, 130);
-    else if (this.getComp() == "L") fill(180, 240, 240);
-    else fill(255);    
+     colorMode(RGB);
+    if (this.getComp() .equals( "B")) fill(255, 200, 0,opac);
+    else if (this.getComp().equals( "C")) fill(0, 120, 0,opac);
+          else if (this.getComp() .equals( "P")) fill(100, 0, 130,opac);
+                else if (this.getComp().equals( "L")) fill(180, 240, 240,opac);
+                      else fill(255,opac);    
     rect(x + size*3/4, y+sizeb*6/7, size/4, sizeb/7);
-    fill(0);
+    fill(0,opac);
     text(comp, x + size*3/4 +size/8, y+sizeb*6/7 + size/20);
   }
 
@@ -522,7 +690,7 @@ class Assignature {
       suma += words.get(i).length();
       tempLine += words.get(i) + " ";
 
-      if (suma + i>25 || i == words.size() - 1) {
+      if (suma + i>17 || i == words.size() - 1) {
         wordsInLine.append(tempLine.substring(0, tempLine.length()-1));
         suma = 0;
         tempLine = "";
@@ -583,14 +751,17 @@ class Career {
 
   String code;
   String name;
-
+  String current;
   int cred;
   int credFUND;
   int credDISC;
   int credLIBR;
   int semTotal;
+  int displayColor;
   IntDict semestres;
   HashMap<Integer, String> sem;
+  HashMap<String, Integer> index;
+  HashMap<String, PVector> positions;
 
 
 
@@ -610,6 +781,7 @@ class Career {
     askCreditsFUND(0);
     askCreditsDISC(0);
     askCreditsLIBR(0);
+    askColor(100);
     declarateLists();
     askSem(10);
   }
@@ -624,6 +796,8 @@ class Career {
     askCreditsDISC(plan.getJSONObject("creditos").getInt("credDISC"));
     askCreditsLIBR(plan.getJSONObject("creditos").getInt("credLIBR"));
     createHierarchy(plan.getJSONArray("components"));
+    askCurrent("0000000");
+    askColor(100);
     askSem(10);
   }
 
@@ -662,7 +836,9 @@ class Career {
     hierarchy = new JSONArray();
     colors = new StringList();
     localAssignatures = new HashMap<String, Assignature>();
+    index = new HashMap<String, Integer>();
     semestres = new IntDict();
+    positions = new HashMap<String, PVector>();
   }
 
 
@@ -690,7 +866,13 @@ class Career {
   public void decreaseSem() {
     semTotal++;
   }
-
+ //Color del fondo
+   public void askColor(int tempColor) {
+    displayColor = tempColor;
+  }
+  public int getColor() {
+    return displayColor;
+  }
 
   //Nombre
   public void askName(String tempName) {
@@ -699,7 +881,13 @@ class Career {
   public String getName() {
     return name;
   }
-
+  //
+  public void askCurrent(String tempCurrent) {
+    current = tempCurrent;
+  }  
+  public String getCurrent() {
+    return current;
+  } 
   //Creditos
   public void askCredits(int tempCode) {
     cred = tempCode;
@@ -749,15 +937,23 @@ class Career {
     String[] lista = compList.array();
     return lista;
   }
-  
+
   public Assignature getAssignature(String cod) {
 
 
     if (localAssignatures.containsKey(cod))return localAssignatures.get(cod);
     else return new Assignature();
   }
-  
-  
+
+  public HashMap<String, PVector> positions() {
+
+    return positions;
+  }
+   public HashMap<String, Integer> index() {
+
+    return index;
+  }
+
   public void createHierarchy(JSONArray components) {
     hierarchy = components;
     //if(components.size() > 0){
@@ -800,7 +996,7 @@ class Career {
       tempsemestres.set(map.getValue().getCode(), 1+preline(map.getValue().getCode()));
     }
     tempsemestres.sortValues();
-    print(tempsemestres);
+
     IntDict temp = new IntDict();
     for ( Integer i = 1; i<=semTotal; i++) {
       temp.set(i.toString(), 0);
@@ -827,14 +1023,40 @@ class Career {
 
 
     semestres.sortValues();
-
+    Integer x = 1;
+    for (String s : semestres.keys()) {
+      index.put(s, x++);
+    }
   }
-  
-  public void buttons(float x,float y,float size){
-  
-  
-  
-  
+
+
+
+  public void buttons(float x, float y, float size, String s) {
+
+
+    colorMode(HSB);
+    fill(170, 200, 50);
+    colorMode(RGB);    
+    rect(x + 2*size/3, y, size/3, 5*size/42);
+    fill(255);    
+    text(index.get(s), x + 5*size/6, y+size/21);
+
+
+    String[] list = localAssignatures.get(s).requirementsArray().array();
+    IntDict ord = new IntDict();
+
+
+
+    for ( int i = 0; i< list.length; i++) {
+      ord.set(list[i], index.get(list[i]));
+    }
+
+
+    ord.sortValues();
+    if (list.length == 0) return;
+
+    Circles boton = new Circles(x, y, size, ord.valueArray())   ;
+    boton.display();
   }
 
 
@@ -858,7 +1080,7 @@ class Career {
     }
     return x;
   }
-  
+
 
   public int preline(String s) {
     int x = 0;
@@ -925,7 +1147,35 @@ class Career {
     return x + preline(temp.array());
   }
 
+  public StringList related(String m) {
+    StringList temp = new StringList(pos(m));
+    temp.append(m);
+    temp.append(localAssignatures.get(m).requirementsArray());
 
+
+    temp.append(related(localAssignatures.get(m).requirementsArray()));
+
+
+
+
+    return new StringList(temp.getUnique());
+  }
+
+  public String[] related(StringList s) {
+
+    StringList temp = new StringList();
+    if (s.size() == 0) return temp.array();
+    for (int i = 0; i<s.size(); i++) {
+      temp.append(localAssignatures.get(s.get(i)).requirementsArray());
+    }
+
+    if (temp.size()== 0) return temp.array();
+
+    temp.append(related(temp));
+
+
+    return temp.getUnique();
+  }
 
   public String[] pos(String s) {
 
@@ -948,8 +1198,31 @@ class Career {
     }
     return m;
   }
+  
+  
+  
+  
+  
+  
+  
+  
 
   public void display() {
+
+    for (Map.Entry<String, Assignature> map : localAssignatures.entrySet()) {
+      map.getValue().askOpac(255);
+      if (localAssignatures.containsKey(current)) {
+        if (!related(current).hasValue(map.getKey())) {
+
+          map.getValue().askOpac(90);
+        }
+      }
+    }
+    Assignature example = new Assignature();
+    example.askCode("C\u00f3digo");
+    example.askName("NOMBRE DE LA ASIGNATURA");
+    example.askAgr("NOMBRE DE LA AGRUPACI\u00d3N");
+
     HashMap<Integer, Integer> mporsem = new HashMap<Integer, Integer>();
 
     for (int i = 1; i<= semTotal; i++) {
@@ -959,13 +1232,14 @@ class Career {
       }
       mporsem.put(i, x);
     }
-  colorMode(HSB);
+    colorMode(HSB);
+
     for (int i = 0; i<semTotal; i++) {
-   noStroke();
-    fill(120,150,20+(semTotal -i)*15);
-      
+      noStroke();
+      fill(getColor(), 100, 20+(semTotal -i)*15);
+
       rect(i*width/semTotal, 0, (i+1)*width/semTotal, height);
-    stroke(0);
+      stroke(0);
     }
     float tempSize = width/semTotal;
 
@@ -973,16 +1247,35 @@ class Career {
     float y = 0;
 
     for (String s : semestres.keys()) {
-
+      PVector pos = new PVector(tempSize*0.1f + tempSize*(-1+semestres.get(localAssignatures.get(s).getCode())), height/14 + y*tempSize);
+      positions.put(s,pos);
       localAssignatures.get(s).display( tempSize*0.1f + tempSize*(-1+semestres.get(localAssignatures.get(s).getCode())), height/14 + y*tempSize, tempSize*0.8f);
+      buttons(tempSize*0.1f + tempSize*(-1+semestres.get(localAssignatures.get(s).getCode())), height/14 + y*tempSize, tempSize*0.8f, s);
       y++;
       if (y>= mporsem.get(semestres.get(localAssignatures.get(s).getCode()))  ) y = 0;
     }
+    example.display(10, height-width/semTotal, 0.9f*width/semTotal);
+    fill(0);
+    rect(10, height-width/semTotal, 0.3f*width/semTotal, 20);
+    fill(255);
+    text("Cr\u00e9ditos", 10+ 0.15f*width/semTotal, 8+height-width/semTotal);
+    fill(130);
+    rect(10 + 0.3f*width/semTotal, height-width/semTotal, 0.3f*width/semTotal, 20);
+    fill(0);
+    text("Horas", 0.3f*width/semTotal+10+ 0.15f*width/semTotal, 8+height-width/semTotal);
+    text("ID", 0.6f*width/semTotal+10+ 0.15f*width/semTotal, 8+height-width/semTotal);
+      rect(0, 0, width, 50);//Barra del menu
+      colorMode(HSB);
+  fill(getColor(),100,100);
+  colorMode(RGB);
+  textSize(25);
+  textFont(menuFont,30);
+  text(getCode() + "    " +getName().toUpperCase() + "     " + "Malla est\u00e1ndar", width/2, 20);
   }
 }
   public void settings() {  fullScreen(); }
   static public void main(String[] passedArgs) {
-    String[] appletArgs = new String[] { "--present", "--window-color=#666666", "--stop-color=#cccccc", "StartPage" };
+    String[] appletArgs = new String[] { "--present", "--window-color=#666666", "--stop-color=#FF0505", "StartPage" };
     if (passedArgs != null) {
       PApplet.main(concat(appletArgs, passedArgs));
     } else {

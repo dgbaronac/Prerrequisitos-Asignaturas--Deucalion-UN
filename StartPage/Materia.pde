@@ -238,7 +238,7 @@ class Assignature {
 
 
     // Agrupación
-    textFont(f, size*3/55);
+    textFont(f, size*3/50);
     fill(agrColor,opac);//TEMPORAL: OFRECIDO POR LA AGRUPACIÓN
 
     rect(x, y+4*sizeb/7, size, 2*sizeb/7);

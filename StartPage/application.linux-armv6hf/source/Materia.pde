@@ -3,6 +3,7 @@ class Assignature {
   String code;
   int cred;
   int hour; 
+  int opac;
   StringList prerequisites;
   String agr;
   color agrColor;
@@ -20,6 +21,7 @@ class Assignature {
     askHour(0);
     askAgr("N/A");
     askComp("");
+    askOpac(255);
     askColor(200);
     initRequire();
   }
@@ -33,6 +35,7 @@ class Assignature {
     askAgr("");
     askComp("");
     askColor(0);
+    askOpac(255);
     initRequire();    
     addRequirement(temp.getJSONArray("need").getStringArray());
   }
@@ -89,7 +92,12 @@ class Assignature {
     return cred;
   }
 
-
+  void askOpac(Integer tempOpac) {
+    opac = tempOpac;
+  }
+  Integer getOpac() {
+    return opac;
+  }
 
 
   //Horas
@@ -194,47 +202,47 @@ class Assignature {
     textAlign(CENTER, CENTER);
     textFont(f, size*3/40);
     noStroke();
-    fill(0);
+    fill(0,opac);
     rect(x, y, size, sizeb);
 
     //Créditos
 
     rect(x, y, size/3, sizeb/7);
-    fill(255);
+    fill(255,opac);
     text(cred, x+size/6, y+sizeb/14);
 
     //Horas Presenciales
-    fill(200);
+    fill(200,opac);
     rect(x+size/3, y, size/3, sizeb/7);
-    fill(0);
+    fill(0,opac);
     text(hour, x+size/6 + size/3, y+sizeb/14);
 
 
 
     //Espacio para botón
 
-    fill(225);
+    fill(225,opac);
     rect(x+2*size/3, y, size/3, sizeb/7); 
-    fill(0);
+    fill(0,opac);
 
 
 
     // Nombre
     textFont(f, size*3/45);
-    fill(255);
+    fill(255,opac);
     rect(x, y+sizeb/7, size, 3*sizeb/7);
-    fill(0);
+    fill(0,opac);
     //Función para salto de linea TODO
     printName(name, x, y, size, sizeb);
 
 
 
     // Agrupación
-    textFont(f, size*3/55);
-    fill(agrColor);//TEMPORAL: OFRECIDO POR LA AGRUPACIÓN
+    textFont(f, size*3/50);
+    fill(agrColor,opac);//TEMPORAL: OFRECIDO POR LA AGRUPACIÓN
 
     rect(x, y+4*sizeb/7, size, 2*sizeb/7);
-    fill(0);
+    fill(0,opac);
     printAgr(agr, x, y, size, sizeb);
 
 
@@ -242,20 +250,21 @@ class Assignature {
 
     //Código
     textFont(f, size*3/40);
-    fill(20);
+    fill(20,opac);
     rect(x, y+sizeb*6/7, size*3/4, sizeb/7);
-    fill(255);
+    fill(255,opac);
     text(code, x + size/3, y + sizeb*13/14);
 
 
     //Componente
-    if (this.getComp() == "B") fill(255, 200, 0);
-    else if (this.getComp() == "C") fill(0, 120, 0);
-    else if (this.getComp() == "P") fill(100, 0, 130);
-    else if (this.getComp() == "L") fill(180, 240, 240);
-    else fill(255);    
+     colorMode(RGB);
+    if (this.getComp() .equals( "B")) fill(255, 200, 0,opac);
+    else if (this.getComp().equals( "C")) fill(0, 120, 0,opac);
+          else if (this.getComp() .equals( "P")) fill(100, 0, 130,opac);
+                else if (this.getComp().equals( "L")) fill(180, 240, 240,opac);
+                      else fill(255,opac);    
     rect(x + size*3/4, y+sizeb*6/7, size/4, sizeb/7);
-    fill(0);
+    fill(0,opac);
     text(comp, x + size*3/4 +size/8, y+sizeb*6/7 + size/20);
   }
 
@@ -277,7 +286,7 @@ class Assignature {
       suma += words.get(i).length();
       tempLine += words.get(i) + " ";
 
-      if (suma + i>25 || i == words.size() - 1) {
+      if (suma + i>17 || i == words.size() - 1) {
         wordsInLine.append(tempLine.substring(0, tempLine.length()-1));
         suma = 0;
         tempLine = "";
