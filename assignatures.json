@@ -449,7 +449,8 @@
 	"need":[
 		"2016377"
 		] 
-	},{
+	},
+	{
 	"code": "2016679",
 	"name": "Mecanica Analítica I",
 	"cred": 4,
@@ -494,7 +495,8 @@
 	"need":[
 		"2025819"
 		] 
-	},{
+	},
+	{
 	"code": "2015153",
 	"name": "Integración y Series",
 	"cred": 4,
@@ -502,7 +504,8 @@
 	"need":[
 		"2015155"
 		] 
-	},{
+	},
+	{
 	"code": "2015158",
 	"name": "Topología General",
 	"cred": 4,
@@ -510,7 +513,8 @@
 	"need":[
 		"2015155"
 		] 
-	},{
+	},
+	{
 	"code": "2015150",
 	"name": "Análisis Númerico",
 	"cred": 4,
@@ -518,7 +522,8 @@
 	"need":[
 		"2015155"
 		] 
-	},{
+	},
+	{
 	"code": "2015149",
 	"name": "Álgebra Multilineal y Formas Canónicas",
 	"cred": 4,
@@ -526,7 +531,8 @@
 	"need":[
 		"2015152"
 		] 
-	},{
+	},
+	{
 	"code": "2015156",
 	"name": "Lógica Matemática",
 	"cred": 4,
@@ -534,7 +540,8 @@
 	"need":[
 		"2015152"
 		] 
-	},{
+	},
+	{
 	"code": "2015157",
 	"name": "Teoría de Cuerpos",
 	"cred": 4,
@@ -542,7 +549,8 @@
 	"need":[
 		"2015152"
 		] 
-	},{
+	},
+	{
 	"code": "2015159",
 	"name": "Variable Compleja",
 	"cred": 4,
@@ -550,13 +558,14 @@
 	"need":[
 		"2015153"
 		] 
-	},{
+	},
+	{
 	"code": "2015151",
 	"name": "Análisis Vectorial",
 	"cred": 4,
 	"hour": 4,	
 	"need":[
-		"2015153","2015149"
+		"2015153"
 		] 
 	}
 
