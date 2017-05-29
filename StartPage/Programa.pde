@@ -8,9 +8,11 @@ class Career {
   int credDISC;
   int credLIBR;
   int semTotal;
+  int displayColor;
   IntDict semestres;
   HashMap<Integer, String> sem;
   HashMap<String, Integer> index;
+  HashMap<String, PVector> positions;
 
 
 
@@ -30,6 +32,7 @@ class Career {
     askCreditsFUND(0);
     askCreditsDISC(0);
     askCreditsLIBR(0);
+    askColor(100);
     declarateLists();
     askSem(10);
   }
@@ -44,7 +47,8 @@ class Career {
     askCreditsDISC(plan.getJSONObject("creditos").getInt("credDISC"));
     askCreditsLIBR(plan.getJSONObject("creditos").getInt("credLIBR"));
     createHierarchy(plan.getJSONArray("components"));
-    askCurrent("2016716");
+    askCurrent("0000000");
+    askColor(100);
     askSem(10);
   }
 
@@ -85,6 +89,7 @@ class Career {
     localAssignatures = new HashMap<String, Assignature>();
     index = new HashMap<String, Integer>();
     semestres = new IntDict();
+    positions = new HashMap<String, PVector>();
   }
 
 
@@ -112,7 +117,13 @@ class Career {
   void decreaseSem() {
     semTotal++;
   }
-
+ //Color del fondo
+   void askColor(int tempColor) {
+    displayColor = tempColor;
+  }
+  int getColor() {
+    return displayColor;
+  }
 
   //Nombre
   void askName(String tempName) {
@@ -185,6 +196,14 @@ class Career {
     else return new Assignature();
   }
 
+  HashMap<String, PVector> positions() {
+
+    return positions;
+  }
+   HashMap<String, Integer> index() {
+
+    return index;
+  }
 
   void createHierarchy(JSONArray components) {
     hierarchy = components;
@@ -430,14 +449,22 @@ class Career {
     }
     return m;
   }
+  
+  
+  
+  
+  
+  
+  
+  
 
   void display() {
     for (Map.Entry<String, Assignature> map : localAssignatures.entrySet()) {
       map.getValue().askOpac(255);
       if (localAssignatures.containsKey(current)) {
-        if (!related(current).hasValue(map.getKey())){
-           
-        map.getValue().askOpac(100);
+        if (!related(current).hasValue(map.getKey())) {
+
+          map.getValue().askOpac(90);
         }
       }
     }
@@ -459,7 +486,7 @@ class Career {
 
     for (int i = 0; i<semTotal; i++) {
       noStroke();
-      fill(150, 200, 20+(semTotal -i)*15);
+      fill(getColor(), 100, 20+(semTotal -i)*15);
 
       rect(i*width/semTotal, 0, (i+1)*width/semTotal, height);
       stroke(0);
@@ -470,7 +497,8 @@ class Career {
     float y = 0;
 
     for (String s : semestres.keys()) {
-
+      PVector pos = new PVector(tempSize*0.1 + tempSize*(-1+semestres.get(localAssignatures.get(s).getCode())), height/14 + y*tempSize);
+      positions.put(s,pos);
       localAssignatures.get(s).display( tempSize*0.1 + tempSize*(-1+semestres.get(localAssignatures.get(s).getCode())), height/14 + y*tempSize, tempSize*0.8);
       buttons(tempSize*0.1 + tempSize*(-1+semestres.get(localAssignatures.get(s).getCode())), height/14 + y*tempSize, tempSize*0.8, s);
       y++;
